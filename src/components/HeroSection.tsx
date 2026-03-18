@@ -24,7 +24,7 @@ const HeroSection = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Left - Copy */}
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 bg-secondary text-trust-blue px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
+              <div className="inline-flex items-center gap-2 bg-primary-foreground/10 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
                 <Star className="w-3 h-3 fill-current" />
                 #1 Rated in Chicagoland
               </div>

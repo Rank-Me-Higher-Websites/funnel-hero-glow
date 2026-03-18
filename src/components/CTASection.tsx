@@ -30,7 +30,9 @@ const CTASection = () => {
         </div>
       </div>
     </section>
+    <QuoteFormDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
   );
+  // wrapping in fragment needed
 };
 
 export default CTASection;

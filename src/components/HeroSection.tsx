@@ -120,6 +120,7 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
+      <QuoteFormDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
     </>
   );
 };

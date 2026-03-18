@@ -13,17 +13,17 @@ const WhyUsSection = () => {
   return (
     <section className="bg-navy text-navy-foreground py-8 md:py-10">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-6 items-center">
           <div className="grid grid-cols-2 gap-3">
             <img
               src={windowCleaning1}
               alt="Professional window cleaning"
-              className="rounded-xl shadow-2xl w-full object-cover aspect-square"
+              className="rounded-xl shadow-2xl w-full object-cover aspect-square border-2 border-accent/20"
             />
             <img
               src={windowCleaning2}
               alt="Window cleaning on ladder"
-              className="rounded-xl shadow-2xl w-full object-cover aspect-square"
+              className="rounded-xl shadow-2xl w-full object-cover aspect-square border-2 border-accent/20"
             />
           </div>
 
@@ -32,7 +32,7 @@ const WhyUsSection = () => {
               <p className="text-trust-blue font-bold text-xs uppercase tracking-widest mb-1">
                 ✦ Why Choose Us
               </p>
-              <h2 className="text-2xl md:text-3xl font-black leading-tight">
+              <h2 className="text-xl md:text-2xl font-black leading-tight">
                 Quality Service For{" "}
                 <span className="text-accent">Residential & Commercial</span>
               </h2>
@@ -47,9 +47,11 @@ const WhyUsSection = () => {
               {features.map((f) => (
                 <div
                   key={f.title}
-                  className="flex items-start gap-2 bg-navy-foreground/5 p-3 rounded-lg"
+                  className="flex items-start gap-2.5 bg-navy-foreground/5 border border-navy-foreground/10 p-3 rounded-lg"
                 >
-                  <f.icon className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                  <div className="w-8 h-8 rounded-md bg-accent/15 flex items-center justify-center flex-shrink-0">
+                    <f.icon className="w-4 h-4 text-accent" />
+                  </div>
                   <div>
                     <h3 className="font-bold text-xs">{f.title}</h3>
                     <p className="text-navy-foreground/60 text-xs">{f.desc}</p>

@@ -1,25 +1,33 @@
-import { Droplets, Wind, Home, Sparkles, Phone } from "lucide-react";
+import { Droplets, Wind, Home, Sparkles, Phone, ArrowRight } from "lucide-react";
 
 const services = [
   {
     icon: Droplets,
     title: "Window Washing",
     desc: "Crystal clear windows for homes and businesses. Interior & exterior cleaning with professional equipment.",
+    color: "text-trust-blue",
+    bgColor: "bg-trust-blue/10",
   },
   {
     icon: Wind,
     title: "Power Washing",
     desc: "Restore your property's curb appeal. Driveways, siding, decks, patios and more.",
+    color: "text-trust-green",
+    bgColor: "bg-trust-green/10",
   },
   {
     icon: Home,
     title: "Gutter Cleaning",
     desc: "Prevent water damage with thorough gutter cleaning and maintenance services.",
+    color: "text-accent",
+    bgColor: "bg-accent/10",
   },
   {
     icon: Sparkles,
     title: "Carpet Cleaning",
     desc: "Professional deep carpet cleaning for your home or business. Stain removal guaranteed.",
+    color: "text-primary",
+    bgColor: "bg-primary/10",
   },
 ];
 
@@ -27,11 +35,11 @@ const ServicesSection = () => {
   return (
     <section className="bg-secondary py-8 md:py-10">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-6">
+        <div className="text-center max-w-2xl mx-auto mb-5">
           <p className="text-trust-blue font-bold text-xs uppercase tracking-widest mb-1">
             ✦ Our Services
           </p>
-          <h2 className="text-2xl md:text-3xl font-black text-foreground leading-tight">
+          <h2 className="text-xl md:text-2xl font-black text-foreground leading-tight">
             Cleaning Solutions For <span className="text-accent">Every Need</span>
           </h2>
         </div>
@@ -40,18 +48,24 @@ const ServicesSection = () => {
           {services.map((s) => (
             <div
               key={s.title}
-              className="bg-card p-4 rounded-xl shadow-md hover:shadow-xl transition-shadow border border-border group"
+              className="bg-card p-5 rounded-xl border-2 border-border hover:border-accent/50 shadow-sm hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
             >
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mb-3 group-hover:bg-accent transition-colors">
-                <s.icon className="w-5 h-5 text-primary-foreground" />
+              {/* Accent top bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+              
+              <div className={`w-11 h-11 ${s.bgColor} rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                <s.icon className={`w-5 h-5 ${s.color}`} />
               </div>
-              <h3 className="text-base font-bold text-foreground mb-1">{s.title}</h3>
-              <p className="text-muted-foreground text-xs leading-relaxed">{s.desc}</p>
+              <h3 className="text-sm font-extrabold text-foreground mb-1.5">{s.title}</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed mb-3">{s.desc}</p>
+              <a href="tel:+18002706228" className="inline-flex items-center gap-1 text-accent text-xs font-bold hover:gap-2 transition-all">
+                Get Quote <ArrowRight className="w-3 h-3" />
+              </a>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-6">
+        <div className="text-center mt-5">
           <a
             href="tel:+18002706228"
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold px-6 py-3 rounded-lg animate-pulse-glow hover:brightness-110 transition-all"

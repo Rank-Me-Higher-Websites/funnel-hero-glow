@@ -57,7 +57,7 @@ const ServicesSection = () => {
                 <s.icon className={`w-5 h-5 ${s.color}`} />
               </div>
               <h3 className="text-sm font-extrabold text-foreground mb-1.5">{s.title}</h3>
-              <p className="text-muted-foreground text-xs leading-relaxed mb-3">{s.desc}</p>
+              <p className="text-foreground/70 text-xs leading-relaxed mb-3">{s.desc}</p>
               <a href="tel:+18002706228" className="inline-flex items-center gap-1 text-accent text-xs font-bold hover:gap-2 transition-all">
                 Get Quote <ArrowRight className="w-3 h-3" />
               </a>

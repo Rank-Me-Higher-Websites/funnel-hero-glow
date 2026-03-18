@@ -6,8 +6,6 @@ const services = [
   "Window Cleaning",
   "Power Washing",
   "Gutter Cleaning",
-  "Carpet Cleaning",
-  "Other",
 ];
 
 interface QuoteFormDialogProps {

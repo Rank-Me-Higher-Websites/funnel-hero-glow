@@ -12,6 +12,7 @@ const features = [
 ];
 
 const WhyUsSection = () => {
+  const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <section className="bg-navy text-navy-foreground py-8 md:py-10">
       <div className="container mx-auto px-4">

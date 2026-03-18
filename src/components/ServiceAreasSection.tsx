@@ -33,15 +33,15 @@ const areas = [
 
 const ServiceAreasSection = () => {
   return (
-    <section className="bg-muted/30 py-10 md:py-14">
+    <section className="bg-primary py-10 md:py-14">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
             <MapPin className="w-3 h-3" />
             Where We Work
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground">Service Areas</h2>
-          <p className="text-foreground/60 text-sm mt-2 max-w-xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black text-primary-foreground">Service Areas</h2>
+          <p className="text-primary-foreground/60 text-sm mt-2 max-w-xl mx-auto">
             Proudly serving Chicago and the surrounding suburbs with top-rated cleaning services.
           </p>
         </div>
@@ -50,14 +50,14 @@ const ServiceAreasSection = () => {
           {areas.map((area) => (
             <div
               key={area.label}
-              className="bg-background rounded-xl border border-foreground/10 p-5 space-y-3"
+              className="bg-primary-foreground/10 rounded-xl border border-primary-foreground/15 p-5 space-y-3"
             >
-              <h3 className="font-bold text-primary text-sm">{area.label}</h3>
+              <h3 className="font-bold text-accent text-sm">{area.label}</h3>
               <div className="flex flex-wrap gap-1.5">
                 {area.cities.map((city) => (
                   <span
                     key={city}
-                    className="text-xs text-foreground/70 bg-muted px-2.5 py-1 rounded-full"
+                    className="text-xs text-primary-foreground/80 bg-primary-foreground/10 px-2.5 py-1 rounded-full"
                   >
                     {city}
                   </span>
@@ -67,7 +67,7 @@ const ServiceAreasSection = () => {
           ))}
         </div>
 
-        <p className="text-center text-foreground/50 text-xs mt-6">
+        <p className="text-center text-primary-foreground/50 text-xs mt-6">
           Don't see your area? Give us a call — we may still be able to reach you!
         </p>
       </div>

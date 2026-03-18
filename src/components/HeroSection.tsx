@@ -9,17 +9,25 @@ const HeroSection = () => {
   return (
     <>
       {/* Top Bar with Logo */}
-      <div className="bg-background py-1.5 md:py-2">
+      <div className="bg-accent py-1.5 md:py-2">
         <div className="container mx-auto px-3 md:px-4 flex items-center justify-between">
           <img src={ernestLogo} alt="Ernest Windows Logo" className="h-10 md:h-16 object-contain" />
-          <a
-            href="tel:+18002706228"
-            className="inline-flex items-center gap-1.5 bg-accent text-accent-foreground font-bold text-xs md:text-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:brightness-110 transition-all"
-          >
-            <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" />
-            <span className="hidden sm:inline">+1-800-270-6228</span>
-            <span className="sm:hidden">Call Now</span>
-          </a>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setQuoteOpen(true)}
+              className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground font-bold text-xs md:text-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:brightness-110 transition-all"
+            >
+              Get Your Free Quote
+            </button>
+            <a
+              href="tel:+18002706228"
+              className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground font-bold text-xs md:text-sm px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:brightness-110 transition-all"
+            >
+              <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              <span className="hidden sm:inline">+1-800-270-6228</span>
+              <span className="sm:hidden">Call Now</span>
+            </a>
+          </div>
         </div>
       </div>
 

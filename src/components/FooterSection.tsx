@@ -61,10 +61,10 @@ const FooterSection = () => {
           {/* Right - Google Map */}
           <div>
             <h3 className="text-lg font-bold mb-4">Find Us</h3>
-            <div className="rounded-lg overflow-hidden border border-primary-foreground/20 w-full aspect-square max-w-[220px]">
+            <div className="rounded-lg overflow-hidden border border-primary-foreground/20 w-full aspect-[4/3] max-w-[280px]">
               <iframe
                 title="Ernest Windows Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2960.5!2d-88.1856!3d41.9950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880faf0c3e2e9b3d%3A0x5e6e4e8e8e8e8e8e!2sBartlett%2C%20IL!5e0!3m2!1sen!2sus!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5921.0!2d-88.1856!3d41.9950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb68bf2025e41%3A0x80a05e6e159e3b0a!2sBartlett%2C+IL!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus&markers=color:red%7C41.9950,-88.1856"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

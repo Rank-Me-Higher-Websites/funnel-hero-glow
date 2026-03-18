@@ -87,6 +87,8 @@ const ServicesSection = () => {
         </div>
       </div>
     </section>
+    <QuoteFormDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
+    </>
   );
 };
 

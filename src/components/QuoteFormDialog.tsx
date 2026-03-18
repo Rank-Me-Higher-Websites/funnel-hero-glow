@@ -132,9 +132,10 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
           />
           <button
             type="submit"
-            className="w-full bg-accent text-accent-foreground font-bold py-3 rounded-lg hover:brightness-110 transition-all"
+            disabled={submitting}
+            className="w-full bg-accent text-accent-foreground font-bold py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50"
           >
-            Submit Request
+            {submitting ? "Sending..." : "Submit Request"}
           </button>
         </form>
       </DialogContent>

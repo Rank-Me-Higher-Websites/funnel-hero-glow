@@ -33,7 +33,7 @@ const areas = [
 
 const ServiceAreasSection = () => {
   return (
-    <section className="bg-muted/30 py-10 md:py-14">
+    <section className="bg-primary py-10 md:py-14">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-3">

@@ -34,7 +34,7 @@ const HeroSection = () => {
                 <span className="text-accent">Guaranteed.</span>
               </h1>
 
-              <p className="text-sm text-muted-foreground max-w-lg leading-relaxed">
+              <p className="text-sm text-primary-foreground/70 max-w-lg leading-relaxed">
                 Ernest Windows has been providing five-star cleaning services to
                 Chicagoland residents and businesses since 2003. Window washing,
                 power washing, gutter cleaning & carpet cleaning.

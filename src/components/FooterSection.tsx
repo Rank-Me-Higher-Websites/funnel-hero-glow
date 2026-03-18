@@ -5,7 +5,7 @@ const FooterSection = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-10 md:py-14">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div className="grid md:grid-cols-3 gap-10 items-start">
           {/* Left - Brand */}
           <div className="space-y-4">
             <img src={ernestLogo} alt="Ernest Windows Logo" className="h-12 object-contain" />
@@ -35,7 +35,7 @@ const FooterSection = () => {
             </div>
           </div>
 
-          {/* Right - Contacts */}
+          {/* Center - Contacts */}
           <div>
             <h3 className="text-lg font-bold mb-4">Contacts</h3>
             <div className="space-y-3">
@@ -55,6 +55,23 @@ const FooterSection = () => {
                   info@ernestwindows.com
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* Right - Google Map */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Find Us</h3>
+            <div className="rounded-lg overflow-hidden border border-primary-foreground/20 w-full aspect-square max-w-[220px]">
+              <iframe
+                title="Ernest Windows Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2960.5!2d-88.1856!3d41.9950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880faf0c3e2e9b3d%3A0x5e6e4e8e8e8e8e8e!2sBartlett%2C%20IL!5e0!3m2!1sen!2sus!4v1700000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>

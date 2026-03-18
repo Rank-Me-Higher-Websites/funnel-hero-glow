@@ -74,6 +74,8 @@ const WhyUsSection = () => {
         </div>
       </div>
     </section>
+    <QuoteFormDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
+    </>
   );
 };
 

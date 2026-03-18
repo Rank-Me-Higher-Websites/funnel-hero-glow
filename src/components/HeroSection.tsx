@@ -23,7 +23,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <section className="bg-primary text-primary-foreground py-4 md:py-20 lg:py-24">
+      <section className="bg-primary text-primary-foreground py-6 md:py-28 lg:py-32">
         <div className="container mx-auto px-3 md:px-4">
           <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-center">
             {/* VSL Video - Shows FIRST on mobile */}

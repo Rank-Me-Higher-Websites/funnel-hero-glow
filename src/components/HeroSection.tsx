@@ -49,7 +49,7 @@ const HeroSection = () => {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-trust-green flex-shrink-0" />
-                    <span className="font-semibold text-foreground text-sm">{item}</span>
+                    <span className="font-semibold text-primary-foreground text-sm">{item}</span>
                   </div>
                 ))}
               </div>

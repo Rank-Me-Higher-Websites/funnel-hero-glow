@@ -1,6 +1,9 @@
-import { Phone, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Phone } from "lucide-react";
+import QuoteFormDialog from "@/components/QuoteFormDialog";
 
 const CTASection = () => {
+  const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <section className="bg-background py-8 md:py-10">
       <div className="container mx-auto px-4 text-center">

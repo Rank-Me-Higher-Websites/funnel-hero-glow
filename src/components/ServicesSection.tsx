@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Droplets, Wind, Home, Phone, ArrowRight, Shield, Clock, ThumbsUp } from "lucide-react";
+import QuoteFormDialog from "@/components/QuoteFormDialog";
 
 const services = [
   {
@@ -31,7 +33,9 @@ const highlights = [
 ];
 
 const ServicesSection = () => {
+  const [quoteOpen, setQuoteOpen] = useState(false);
   return (
+    <>
     <section className="bg-secondary py-8 md:py-10">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-5">
@@ -73,16 +77,18 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center mt-5">
-          <a
-            href="tel:+18002706228"
+          <button
+            onClick={() => setQuoteOpen(true)}
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold px-6 py-3 rounded-lg animate-pulse-glow hover:brightness-110 transition-all"
           >
             <Phone className="w-4 h-4" />
             Get Your Free Quote
-          </a>
+          </button>
         </div>
       </div>
     </section>
+    <QuoteFormDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
+    </>
   );
 };
 

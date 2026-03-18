@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Shield, Clock, Award, ThumbsUp, Phone } from "lucide-react";
+import QuoteFormDialog from "@/components/QuoteFormDialog";
 import windowCleaning1 from "@/assets/window-cleaning-1.png";
 import windowCleaning2 from "@/assets/window-cleaning-2.png";
 
@@ -10,7 +12,9 @@ const features = [
 ];
 
 const WhyUsSection = () => {
+  const [quoteOpen, setQuoteOpen] = useState(false);
   return (
+    <>
     <section className="bg-navy text-navy-foreground py-8 md:py-10">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-6 items-center">
@@ -60,17 +64,19 @@ const WhyUsSection = () => {
               ))}
             </div>
 
-            <a
-              href="tel:+18002706228"
+            <button
+              onClick={() => setQuoteOpen(true)}
               className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold px-6 py-3 rounded-lg animate-pulse-glow hover:brightness-110 transition-all"
             >
               <Phone className="w-4 h-4" />
               Get Your Free Quote
-            </a>
+            </button>
           </div>
         </div>
       </div>
     </section>
+    <QuoteFormDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
+    </>
   );
 };
 

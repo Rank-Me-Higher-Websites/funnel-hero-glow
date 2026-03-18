@@ -6,11 +6,11 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row gap-5 items-start max-w-4xl mx-auto">
           {/* Left - Image */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 w-40 md:w-48">
             <img
               src={aboutTeamImg}
               alt="Ernest Windows team member giving thumbs up"
-              className="rounded-xl w-40 md:w-44 object-contain"
+              className="rounded-xl w-full h-auto block"
             />
           </div>
 

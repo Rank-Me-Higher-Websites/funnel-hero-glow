@@ -19,22 +19,22 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <section className="bg-background py-8 md:py-12">
+      <section className="bg-primary text-primary-foreground py-8 md:py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Left - Copy */}
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 bg-secondary text-trust-blue px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
+              <div className="inline-flex items-center gap-2 bg-primary-foreground/10 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide">
                 <Star className="w-3 h-3 fill-current" />
                 #1 Rated in Chicagoland
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] text-foreground">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] text-primary-foreground">
                 Crystal Clear Windows.{" "}
                 <span className="text-accent">Guaranteed.</span>
               </h1>
 
-              <p className="text-sm text-muted-foreground max-w-lg leading-relaxed">
+              <p className="text-sm text-primary-foreground/70 max-w-lg leading-relaxed">
                 Ernest Windows has been providing five-star cleaning services to
                 Chicagoland residents and businesses since 2003. Window washing,
                 power washing, gutter cleaning & carpet cleaning.
@@ -49,7 +49,7 @@ const HeroSection = () => {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-trust-green flex-shrink-0" />
-                    <span className="font-semibold text-foreground text-sm">{item}</span>
+                    <span className="font-semibold text-primary-foreground text-sm">{item}</span>
                   </div>
                 ))}
               </div>
@@ -64,20 +64,20 @@ const HeroSection = () => {
                 </a>
                 <a
                   href="tel:+18002706228"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-bold px-6 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-primary-foreground text-primary-foreground font-bold px-6 py-3 rounded-lg hover:bg-primary-foreground hover:text-primary transition-all"
                 >
                   +1-800-270-6228
                 </a>
               </div>
 
               {/* Trust Badges */}
-              <div className="flex items-center gap-4 pt-3 border-t border-border">
+              <div className="flex items-center gap-4 pt-3 border-t border-primary-foreground/20">
                 <img src={bbbBadge} alt="BBB Accredited Business A+ Rating" className="h-10 object-contain" />
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-accent fill-accent" />
                   ))}
-                  <span className="ml-1 text-xs font-semibold text-muted-foreground">
+                  <span className="ml-1 text-xs font-semibold text-primary-foreground/70">
                     4.9/5 (500+ Reviews)
                   </span>
                 </div>

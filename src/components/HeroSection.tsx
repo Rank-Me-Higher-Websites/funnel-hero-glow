@@ -50,7 +50,7 @@ const HeroSection = () => {
 
               {/* Floating Stats */}
               <div className="flex justify-center gap-2 md:gap-4 mt-2 md:mt-3">
-                <div className="bg-trust-blue text-primary-foreground px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-md text-center">
+                <div className="bg-accent text-accent-foreground px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-md text-center">
                   <div className="text-base md:text-xl font-black">22+</div>
                   <div className="text-[9px] md:text-[10px] font-semibold opacity-90">Years Exp.</div>
                 </div>
@@ -58,9 +58,13 @@ const HeroSection = () => {
                   <div className="text-base md:text-xl font-black">100k+</div>
                   <div className="text-[9px] md:text-[10px] font-semibold opacity-90">Projects</div>
                 </div>
-                <div className="bg-trust-green text-primary-foreground px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-md text-center">
+                <div className="bg-accent text-accent-foreground px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-md text-center">
                   <div className="text-base md:text-xl font-black">500+</div>
                   <div className="text-[9px] md:text-[10px] font-semibold opacity-90">5-Star Reviews</div>
+                </div>
+                <div className="bg-accent text-accent-foreground px-3 py-1.5 md:px-4 md:py-2 rounded-lg shadow-md text-center">
+                  <div className="text-base md:text-xl font-black">89</div>
+                  <div className="text-[9px] md:text-[10px] font-semibold opacity-90">Expert Workers</div>
                 </div>
               </div>
             </div>

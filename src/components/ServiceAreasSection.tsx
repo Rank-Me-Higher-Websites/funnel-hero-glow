@@ -1,48 +1,74 @@
+import { MapPin } from "lucide-react";
+
 const areas = [
   {
     label: "North & Northwest Suburbs",
-    cities:
-      "Lake Forest, Highland Park, Deerfield, Glenview, Glencoe, Winnetka, Wilmette, Evanston, Skokie, Lincolnwood, Park Ridge, and more.",
+    cities: [
+      "Lake Forest", "Highland Park", "Deerfield", "Glenview", "Glencoe",
+      "Winnetka", "Wilmette", "Evanston", "Skokie", "Lincolnwood", "Park Ridge",
+    ],
   },
   {
     label: "West Suburbs",
-    cities:
-      "Elgin, South Elgin, St. Charles, Geneva, Batavia, Aurora, Wheaton, Glen Ellyn, Wood Dale, Bensenville, and surrounding areas.",
+    cities: [
+      "Elgin", "South Elgin", "St. Charles", "Geneva", "Batavia",
+      "Aurora", "Wheaton", "Glen Ellyn", "Wood Dale", "Bensenville",
+    ],
   },
   {
     label: "East Suburbs",
-    cities:
-      "Franklin Park, Northlake, Melrose Park, Oak Park, Elmhurst, Villa Park, Lombard, Oak Brook, Westchester, and more.",
+    cities: [
+      "Franklin Park", "Northlake", "Melrose Park", "Oak Park", "Elmhurst",
+      "Villa Park", "Lombard", "Oak Brook", "Westchester",
+    ],
   },
   {
     label: "South & Southwest Suburbs",
-    cities:
-      "Naperville, Plainfield, Romeoville, Oswego, Lemont, Lockport, Homer Glen, Orland Park, and beyond.",
+    cities: [
+      "Naperville", "Plainfield", "Romeoville", "Oswego", "Lemont",
+      "Lockport", "Homer Glen", "Orland Park",
+    ],
   },
 ];
 
 const ServiceAreasSection = () => {
   return (
-    <section className="bg-background py-10 md:py-14 border-t border-border">
-      <div className="container mx-auto px-4 space-y-6">
-        <h2 className="text-3xl md:text-4xl font-black text-foreground">Service Areas</h2>
+    <section className="bg-muted/30 py-10 md:py-14">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+            <MapPin className="w-3 h-3" />
+            Where We Work
+          </div>
+          <h2 className="text-3xl md:text-4xl font-black text-foreground">Service Areas</h2>
+          <p className="text-foreground/60 text-sm mt-2 max-w-xl mx-auto">
+            Proudly serving Chicago and the surrounding suburbs with top-rated cleaning services.
+          </p>
+        </div>
 
-        <p className="text-foreground/70 text-sm leading-relaxed">
-          Looking for deck maintenance, window cleaning, or exterior cleaning services near you?
-          We proudly serve Chicago and the surrounding suburbs, including:
-        </p>
-
-        <div className="space-y-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {areas.map((area) => (
-            <p key={area.label} className="text-sm leading-relaxed">
-              <span className="font-bold text-primary">{area.label}</span>
-              <span className="text-foreground/70">: {area.cities}</span>
-            </p>
+            <div
+              key={area.label}
+              className="bg-background rounded-xl border border-foreground/10 p-5 space-y-3"
+            >
+              <h3 className="font-bold text-primary text-sm">{area.label}</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {area.cities.map((city) => (
+                  <span
+                    key={city}
+                    className="text-xs text-foreground/70 bg-muted px-2.5 py-1 rounded-full"
+                  >
+                    {city}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
 
-        <p className="text-foreground/60 text-sm italic">
-          If your area isn't listed, give us a call to confirm whether we can reach you!
+        <p className="text-center text-foreground/50 text-xs mt-6">
+          Don't see your area? Give us a call — we may still be able to reach you!
         </p>
       </div>
     </section>

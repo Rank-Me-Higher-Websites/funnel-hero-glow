@@ -4,7 +4,7 @@ import ernestLogo from "@/assets/ernest-logo.png";
 
 const HeroSection = () => {
   return (
-    <section className="bg-background py-12 md:py-20">
+    <section className="bg-background py-8 md:py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           {/* Left - Copy */}

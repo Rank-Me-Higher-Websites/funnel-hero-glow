@@ -1,4 +1,4 @@
-import { Droplets, Wind, Home, Sparkles } from "lucide-react";
+import { Droplets, Wind, Home, Sparkles, Phone } from "lucide-react";
 
 const services = [
   {

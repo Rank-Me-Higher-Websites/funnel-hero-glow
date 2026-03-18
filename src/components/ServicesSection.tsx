@@ -48,7 +48,7 @@ const ServicesSection = () => {
           {services.map((s) => (
             <div
               key={s.title}
-              className="bg-card p-5 rounded-xl border-2 border-foreground/20 shadow-sm hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
+              className="bg-card p-5 rounded-xl border-2 border-foreground/40 shadow-sm hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
             >
               {/* Accent top bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 opacity-0 group-hover:opacity-100 transition-opacity" />

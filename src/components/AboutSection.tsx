@@ -2,7 +2,7 @@ import aboutTeamImg from "@/assets/about-team-cropped.png";
 
 const AboutSection = () => {
   return (
-    <section className="bg-background py-5 md:py-8">
+    <section className="bg-background bg-pattern-dots py-5 md:py-8">
       <div className="container mx-auto px-3 md:px-4">
         <div className="flex flex-col md:flex-row gap-4 md:gap-5 items-start max-w-4xl mx-auto">
           {/* Image */}

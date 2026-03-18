@@ -36,7 +36,7 @@ const ServicesSection = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <>
-    <section className="bg-secondary py-6 md:py-10">
+    <section className="bg-secondary bg-pattern-grid py-6 md:py-10">
       <div className="container mx-auto px-3 md:px-4">
         <div className="text-center max-w-2xl mx-auto mb-4 md:mb-5">
           <p className="text-trust-blue font-bold text-xs uppercase tracking-widest mb-1">

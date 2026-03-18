@@ -29,7 +29,7 @@ const HeroSection = () => {
                 #1 Rated in Chicagoland
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] text-foreground">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] text-primary-foreground">
                 Crystal Clear Windows.{" "}
                 <span className="text-accent">Guaranteed.</span>
               </h1>

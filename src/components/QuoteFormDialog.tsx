@@ -29,14 +29,25 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Free Quote Request - ${formData.service}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nAddress: ${formData.address}\nDetails: ${formData.details}`
-    );
-    window.location.href = `mailto:info@ernestwindows.com?subject=${subject}&body=${body}`;
-    onOpenChange(false);
+    setSubmitting(true);
+    try {
+      await fetch("https://cdlagency.app.n8n.cloud/webhook/99751654-d1ae-4535-81fb-2e858e1c5220", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
+        body: JSON.stringify(formData),
+      });
+      onOpenChange(false);
+      setFormData({ fullName: "", email: "", phone: "", service: "", address: "", details: "" });
+    } catch (err) {
+      console.error("Webhook error:", err);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputClass =
@@ -121,9 +132,10 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
           />
           <button
             type="submit"
-            className="w-full bg-accent text-accent-foreground font-bold py-3 rounded-lg hover:brightness-110 transition-all"
+            disabled={submitting}
+            className="w-full bg-accent text-accent-foreground font-bold py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50"
           >
-            Submit Request
+            {submitting ? "Sending..." : "Submit Request"}
           </button>
         </form>
       </DialogContent>

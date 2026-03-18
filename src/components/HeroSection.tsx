@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Phone, Play, Star, CheckCircle } from "lucide-react";
 import bbbBadge from "@/assets/bbb-badge.png";
 import ernestLogo from "@/assets/ernest-logo.png";
+import QuoteFormDialog from "@/components/QuoteFormDialog";
 
 const HeroSection = () => {
+  const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <>
       {/* Top Bar with Logo */}

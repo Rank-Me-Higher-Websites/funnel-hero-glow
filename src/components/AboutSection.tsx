@@ -1,3 +1,5 @@
+import aboutTeamImg from "@/assets/about-team.png";
+
 const AboutSection = () => {
   return (
     <section className="bg-background py-10 md:py-14">

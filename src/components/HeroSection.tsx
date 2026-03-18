@@ -64,7 +64,7 @@ const HeroSection = () => {
                 </a>
                 <a
                   href="tel:+18002706228"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-bold px-6 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-primary-foreground text-primary-foreground font-bold px-6 py-3 rounded-lg hover:bg-primary-foreground hover:text-primary transition-all"
                 >
                   +1-800-270-6228
                 </a>

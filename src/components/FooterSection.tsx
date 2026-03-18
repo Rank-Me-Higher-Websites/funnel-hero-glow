@@ -15,13 +15,20 @@ const FooterSection = () => {
             <div>
               <p className="font-bold text-sm mb-2">Follow Us On:</p>
               <div className="flex items-center gap-4">
-                {["Facebook", "YouTube", "Instagram", "TikTok"].map((platform) => (
+                {[
+                  { name: "Facebook", url: "https://www.facebook.com/ErnestWindows/" },
+                  { name: "YouTube", url: "https://www.youtube.com/channel/UCsO4FMR03U_rJHG2LeYS2IQ" },
+                  { name: "Instagram", url: "https://www.instagram.com/ernestwindows/" },
+                  { name: "TikTok", url: "https://www.tiktok.com/@ernestwindows" },
+                ].map((platform) => (
                   <a
-                    key={platform}
-                    href="#"
+                    key={platform.name}
+                    href={platform.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary-foreground/60 hover:text-primary-foreground text-xs transition-colors"
                   >
-                    {platform}
+                    {platform.name}
                   </a>
                 ))}
               </div>

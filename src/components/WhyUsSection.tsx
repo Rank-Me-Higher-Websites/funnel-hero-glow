@@ -63,13 +63,13 @@ const WhyUsSection = () => {
               ))}
             </div>
 
-            <a
-              href="tel:+18002706228"
+            <button
+              onClick={() => setQuoteOpen(true)}
               className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold px-6 py-3 rounded-lg animate-pulse-glow hover:brightness-110 transition-all"
             >
               <Phone className="w-4 h-4" />
               Get Your Free Quote
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ const AboutSection = () => {
   return (
     <section className="bg-background py-10 md:py-14">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div className="grid md:grid-cols-2 gap-6 items-center">
           {/* Left */}
           <div>
             <p className="text-primary font-bold text-sm mb-2">Ernest Windows</p>
@@ -12,12 +12,12 @@ const AboutSection = () => {
             <img
               src={aboutTeamImg}
               alt="Ernest Windows team member giving thumbs up"
-              className="rounded-xl max-w-xs"
+              className="rounded-xl w-full"
             />
           </div>
 
           {/* Right */}
-          <div className="space-y-5 text-foreground/70 text-sm leading-relaxed">
+          <div className="space-y-5 text-foreground/70 text-base leading-relaxed">
             <p>
               At Ernest Windows, we are a team of dedicated professionals specializing in house
               maintenance services. Each job is handled by skilled experts, ensuring efficiency

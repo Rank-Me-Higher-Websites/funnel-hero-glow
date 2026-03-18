@@ -58,21 +58,16 @@ const FooterSection = () => {
             </div>
           </div>
 
-          {/* Google Map */}
+          {/* Services */}
           <div>
-            <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4">Find Us</h3>
-            <div className="rounded-lg overflow-hidden border border-primary-foreground/20 w-full aspect-[16/9]">
-              <iframe
-                title="Ernest Windows Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5921.0!2d-88.1856!3d41.9950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb68bf2025e41%3A0x80a05e6e159e3b0a!2sBartlett%2C+IL!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus&markers=color:red%7C41.9950,-88.1856"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+            <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4">Our Services</h3>
+            <ul className="space-y-2">
+              {["Window Washing", "Power Washing", "Gutter Cleaning"].map((service) => (
+                <li key={service} className="text-xs md:text-sm text-primary-foreground/80">
+                  {service}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

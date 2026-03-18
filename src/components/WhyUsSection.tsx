@@ -1,5 +1,6 @@
 import { Shield, Clock, Award, ThumbsUp, Phone } from "lucide-react";
-import heroImg from "@/assets/hero-window-cleaning.jpg";
+import windowCleaning1 from "@/assets/window-cleaning-1.png";
+import windowCleaning2 from "@/assets/window-cleaning-2.png";
 
 const features = [
   { icon: Shield, title: "Fully Licensed & Insured", desc: "Complete peace of mind" },

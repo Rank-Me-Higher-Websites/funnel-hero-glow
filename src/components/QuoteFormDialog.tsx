@@ -121,7 +121,7 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
           />
           <textarea
             name="details"
-            placeholder="Extra Details (optional)"
+            placeholder="House Details (optional)"
             maxLength={1000}
             rows={3}
             value={formData.details}

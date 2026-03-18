@@ -33,7 +33,9 @@ const highlights = [
 ];
 
 const ServicesSection = () => {
+  const [quoteOpen, setQuoteOpen] = useState(false);
   return (
+    <>
     <section className="bg-secondary py-8 md:py-10">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-5">

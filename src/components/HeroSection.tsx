@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <>
       {/* Top Bar with Logo */}
-      <div className="bg-primary py-2">
+      <div className="bg-background py-2">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <img src={ernestLogo} alt="Ernest Windows Logo" className="h-10 object-contain" />
           <a

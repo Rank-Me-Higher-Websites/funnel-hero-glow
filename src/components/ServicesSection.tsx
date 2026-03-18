@@ -1,4 +1,4 @@
-import { Droplets, Wind, Home, Sparkles, Phone, ArrowRight } from "lucide-react";
+import { Droplets, Wind, Home, Phone, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -21,13 +21,6 @@ const services = [
     desc: "Prevent water damage with thorough gutter cleaning and maintenance services.",
     color: "text-accent",
     bgColor: "bg-accent/10",
-  },
-  {
-    icon: Sparkles,
-    title: "Carpet Cleaning",
-    desc: "Professional deep carpet cleaning for your home or business. Stain removal guaranteed.",
-    color: "text-primary",
-    bgColor: "bg-primary/10",
   },
 ];
 

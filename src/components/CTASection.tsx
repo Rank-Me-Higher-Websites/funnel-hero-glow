@@ -2,7 +2,7 @@ import { Phone, ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="bg-primary py-8 md:py-10">
+    <section className="bg-background py-8 md:py-10">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-black text-primary-foreground mb-2">
           Ready For Spotless Windows?

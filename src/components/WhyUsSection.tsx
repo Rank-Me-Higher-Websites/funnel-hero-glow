@@ -14,19 +14,17 @@ const WhyUsSection = () => {
     <section className="bg-navy text-navy-foreground py-8 md:py-10">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="relative">
+          <div className="grid grid-cols-2 gap-3">
             <img
-              src={heroImg}
-              alt="Ernest Windows professional window cleaning"
-              className="rounded-xl shadow-2xl w-full object-cover aspect-[4/5]"
+              src={windowCleaning1}
+              alt="Professional window cleaning"
+              className="rounded-xl shadow-2xl w-full object-cover aspect-square"
             />
-            <div className="absolute bottom-4 left-4 bg-trust-blue text-primary-foreground px-4 py-3 rounded-xl shadow-lg">
-              <div className="flex items-center gap-2">
-                <ThumbsUp className="w-5 h-5" />
-                <span className="text-2xl font-black">89%</span>
-              </div>
-              <div className="text-xs font-semibold opacity-90">Satisfied Clients</div>
-            </div>
+            <img
+              src={windowCleaning2}
+              alt="Window cleaning on ladder"
+              className="rounded-xl shadow-2xl w-full object-cover aspect-square"
+            />
           </div>
 
           <div className="space-y-4">

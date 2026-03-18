@@ -3,18 +3,18 @@ import ernestLogo from "@/assets/ernest-logo.png";
 
 const FooterSection = () => {
   return (
-    <footer className="bg-primary text-primary-foreground py-10 md:py-14">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-10 items-start">
-          {/* Left - Brand */}
-          <div className="space-y-4">
-            <img src={ernestLogo} alt="Ernest Windows Logo" className="h-12 object-contain" />
-            <p className="text-primary-foreground/70 text-sm max-w-sm leading-relaxed">
+    <footer className="bg-primary text-primary-foreground py-8 md:py-14">
+      <div className="container mx-auto px-3 md:px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 items-start">
+          {/* Brand */}
+          <div className="space-y-3 md:space-y-4">
+            <img src={ernestLogo} alt="Ernest Windows Logo" className="h-10 md:h-12 object-contain" />
+            <p className="text-primary-foreground/70 text-xs md:text-sm max-w-sm leading-relaxed">
               Qualified professional window washing, gutter cleaning and power washing service.
             </p>
             <div>
-              <p className="font-bold text-sm mb-2">Follow Us On:</p>
-              <div className="flex items-center gap-4">
+              <p className="font-bold text-xs md:text-sm mb-1.5 md:mb-2">Follow Us On:</p>
+              <div className="flex items-center gap-3 md:gap-4">
                 {[
                   { name: "Facebook", url: "https://www.facebook.com/ErnestWindows/" },
                   { name: "YouTube", url: "https://www.youtube.com/channel/UCsO4FMR03U_rJHG2LeYS2IQ" },
@@ -35,32 +35,32 @@ const FooterSection = () => {
             </div>
           </div>
 
-          {/* Center - Contacts */}
+          {/* Contacts */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Contacts</h3>
-            <div className="space-y-3">
+            <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4">Contacts</h3>
+            <div className="space-y-2.5 md:space-y-3">
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-accent flex-shrink-0" />
-                <span className="text-sm text-primary-foreground/80">Bartlett, IL</span>
+                <span className="text-xs md:text-sm text-primary-foreground/80">Bartlett, IL</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-                <a href="tel:+18002706228" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="tel:+18002706228" className="text-xs md:text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                   1-800-270-6228
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-accent flex-shrink-0" />
-                <a href="mailto:info@ernestwindows.com" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <a href="mailto:info@ernestwindows.com" className="text-xs md:text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors break-all">
                   info@ernestwindows.com
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right - Google Map */}
+          {/* Google Map */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Find Us</h3>
+            <h3 className="text-base md:text-lg font-bold mb-3 md:mb-4">Find Us</h3>
             <div className="rounded-lg overflow-hidden border border-primary-foreground/20 w-full aspect-[4/3] max-w-[280px]">
               <iframe
                 title="Ernest Windows Location"
@@ -77,8 +77,8 @@ const FooterSection = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-foreground/15 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-primary-foreground/50">
+        <div className="border-t border-primary-foreground/15 mt-6 md:mt-10 pt-4 md:pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 md:gap-3">
+          <p className="text-[10px] md:text-xs text-primary-foreground/50">
             © 2003-2026 Ernest Windows. All Rights Reserved.
           </p>
         </div>

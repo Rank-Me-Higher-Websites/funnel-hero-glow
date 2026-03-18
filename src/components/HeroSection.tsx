@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Top Bar with Logo */}
       <div className="bg-background py-2">
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <img src={ernestLogo} alt="Ernest Windows Logo" className="h-10 object-contain" />
+          <img src={ernestLogo} alt="Ernest Windows Logo" className="h-14 md:h-16 object-contain" />
           <a
             href="tel:+18002706228"
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground font-bold text-sm px-4 py-2 rounded-lg hover:brightness-110 transition-all"

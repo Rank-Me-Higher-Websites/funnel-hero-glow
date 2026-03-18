@@ -77,7 +77,7 @@ const HeroSection = () => {
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-accent fill-accent" />
                   ))}
-                  <span className="ml-1 text-xs font-semibold text-muted-foreground">
+                  <span className="ml-1 text-xs font-semibold text-primary-foreground/70">
                     4.9/5 (500+ Reviews)
                   </span>
                 </div>

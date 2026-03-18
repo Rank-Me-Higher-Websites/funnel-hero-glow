@@ -71,7 +71,7 @@ const HeroSection = () => {
               </div>
 
               {/* Trust Badges */}
-              <div className="flex items-center gap-4 pt-3 border-t border-border">
+              <div className="flex items-center gap-4 pt-3 border-t border-primary-foreground/20">
                 <img src={bbbBadge} alt="BBB Accredited Business A+ Rating" className="h-10 object-contain" />
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (

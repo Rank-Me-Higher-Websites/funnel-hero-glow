@@ -14,13 +14,13 @@ const CTASection = () => {
           Get your free estimate today. No obligation, no pressure — just honest pricing.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href="tel:+18002706228"
+          <button
+            onClick={() => setQuoteOpen(true)}
             className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground font-bold px-8 py-4 rounded-lg animate-pulse-glow hover:brightness-110 transition-all"
           >
             <Phone className="w-5 h-5" />
             Get Your Free Quote
-          </a>
+          </button>
           <a
             href="tel:+18002706228"
             className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-bold px-8 py-4 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all"

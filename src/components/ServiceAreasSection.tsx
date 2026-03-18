@@ -67,7 +67,7 @@ const ServiceAreasSection = () => {
           ))}
         </div>
 
-        <p className="text-center text-foreground/50 text-xs mt-6">
+        <p className="text-center text-primary-foreground/50 text-xs mt-6">
           Don't see your area? Give us a call — we may still be able to reach you!
         </p>
       </div>

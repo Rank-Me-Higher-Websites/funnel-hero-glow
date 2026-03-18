@@ -1,4 +1,4 @@
-import { Droplets, Wind, Home, Phone, ArrowRight } from "lucide-react";
+import { Droplets, Wind, Home, Phone, ArrowRight, Shield, Clock, ThumbsUp } from "lucide-react";
 
 const services = [
   {
@@ -24,6 +24,12 @@ const services = [
   },
 ];
 
+const highlights = [
+  { icon: Shield, text: "Fully Licensed & Insured" },
+  { icon: Clock, text: "Same-Day Availability" },
+  { icon: ThumbsUp, text: "100% Satisfaction Guarantee" },
+];
+
 const ServicesSection = () => {
   return (
     <section className="bg-secondary py-8 md:py-10">
@@ -43,17 +49,25 @@ const ServicesSection = () => {
               key={s.title}
               className="bg-card p-5 rounded-xl border-2 border-foreground/40 shadow-sm hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
             >
-              {/* Accent top bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 opacity-0 group-hover:opacity-100 transition-opacity" />
-              
               <div className={`w-11 h-11 ${s.bgColor} rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
                 <s.icon className={`w-5 h-5 ${s.color}`} />
               </div>
               <h3 className="text-sm font-extrabold text-foreground mb-1.5">{s.title}</h3>
-              <p className="text-muted-foreground text-xs leading-relaxed mb-3">{s.desc}</p>
+              <p className="text-foreground/80 text-xs leading-relaxed mb-3">{s.desc}</p>
               <a href="tel:+18002706228" className="inline-flex items-center gap-1 text-accent text-xs font-bold hover:gap-2 transition-all">
                 Get Quote <ArrowRight className="w-3 h-3" />
               </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Highlights strip */}
+        <div className="flex flex-wrap justify-center gap-6 mt-5 max-w-4xl mx-auto">
+          {highlights.map((h) => (
+            <div key={h.text} className="flex items-center gap-2 text-foreground/90">
+              <h.icon className="w-4 h-4 text-accent" />
+              <span className="text-xs font-bold">{h.text}</span>
             </div>
           ))}
         </div>

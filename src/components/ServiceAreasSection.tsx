@@ -36,12 +36,12 @@ const ServiceAreasSection = () => {
     <section className="bg-primary py-10 md:py-14">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
             <MapPin className="w-3 h-3" />
             Where We Work
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-foreground">Service Areas</h2>
-          <p className="text-foreground/60 text-sm mt-2 max-w-xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black text-primary-foreground">Service Areas</h2>
+          <p className="text-primary-foreground/60 text-sm mt-2 max-w-xl mx-auto">
             Proudly serving Chicago and the surrounding suburbs with top-rated cleaning services.
           </p>
         </div>

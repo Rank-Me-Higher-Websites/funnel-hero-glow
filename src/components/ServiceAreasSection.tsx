@@ -33,31 +33,31 @@ const areas = [
 
 const ServiceAreasSection = () => {
   return (
-    <section className="bg-primary py-10 md:py-14">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 text-primary-foreground px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-3">
+    <section className="bg-primary py-6 md:py-14">
+      <div className="container mx-auto px-3 md:px-4">
+        <div className="text-center mb-4 md:mb-8">
+          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 text-primary-foreground px-3 py-1 md:py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide mb-2 md:mb-3">
             <MapPin className="w-3 h-3" />
             Where We Work
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-primary-foreground">Service Areas</h2>
-          <p className="text-primary-foreground/60 text-sm mt-2 max-w-xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-black text-primary-foreground">Service Areas</h2>
+          <p className="text-primary-foreground/60 text-xs md:text-sm mt-1.5 md:mt-2 max-w-xl mx-auto">
             Proudly serving Chicago and the surrounding suburbs with top-rated cleaning services.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-4">
           {areas.map((area) => (
             <div
               key={area.label}
-              className="bg-primary-foreground/10 rounded-xl border border-primary-foreground/15 p-5 space-y-3"
+              className="bg-primary-foreground/10 rounded-xl border border-primary-foreground/15 p-3 md:p-5 space-y-2 md:space-y-3"
             >
-              <h3 className="font-bold text-accent text-sm">{area.label}</h3>
-              <div className="flex flex-wrap gap-1.5">
+              <h3 className="font-bold text-accent text-xs md:text-sm">{area.label}</h3>
+              <div className="flex flex-wrap gap-1 md:gap-1.5">
                 {area.cities.map((city) => (
                   <span
                     key={city}
-                    className="text-xs text-primary-foreground/80 bg-primary-foreground/10 px-2.5 py-1 rounded-full"
+                    className="text-[10px] md:text-xs text-primary-foreground/80 bg-primary-foreground/10 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full"
                   >
                     {city}
                   </span>
@@ -67,7 +67,7 @@ const ServiceAreasSection = () => {
           ))}
         </div>
 
-        <p className="text-center text-primary-foreground/50 text-xs mt-6">
+        <p className="text-center text-primary-foreground/50 text-[10px] md:text-xs mt-4 md:mt-6">
           Don't see your area? Give us a call — we may still be able to reach you!
         </p>
       </div>

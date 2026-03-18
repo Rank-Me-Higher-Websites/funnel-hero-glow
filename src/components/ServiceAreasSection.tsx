@@ -50,14 +50,14 @@ const ServiceAreasSection = () => {
           {areas.map((area) => (
             <div
               key={area.label}
-              className="bg-background rounded-xl border border-foreground/10 p-5 space-y-3"
+              className="bg-primary-foreground/10 rounded-xl border border-primary-foreground/15 p-5 space-y-3"
             >
-              <h3 className="font-bold text-primary text-sm">{area.label}</h3>
+              <h3 className="font-bold text-accent text-sm">{area.label}</h3>
               <div className="flex flex-wrap gap-1.5">
                 {area.cities.map((city) => (
                   <span
                     key={city}
-                    className="text-xs text-foreground/70 bg-muted px-2.5 py-1 rounded-full"
+                    className="text-xs text-primary-foreground/80 bg-primary-foreground/10 px-2.5 py-1 rounded-full"
                   >
                     {city}
                   </span>

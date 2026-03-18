@@ -24,6 +24,11 @@ const AboutSection = () => {
               cost until expectations are met. Every project is personalized to suit individual
               needs because our goal is to provide exactly what our customers envision.
             </p>
+            <img
+              src={aboutTeamImg}
+              alt="Ernest Windows team member giving thumbs up"
+              className="rounded-xl max-w-xs mx-auto mt-4"
+            />
           </div>
         </div>
       </div>

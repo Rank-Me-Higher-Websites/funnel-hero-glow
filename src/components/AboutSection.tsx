@@ -8,7 +8,12 @@ const AboutSection = () => {
           {/* Left */}
           <div>
             <p className="text-primary font-bold text-sm mb-2">Ernest Windows</p>
-            <h2 className="text-3xl md:text-4xl font-black text-foreground">About Us</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-6">About Us</h2>
+            <img
+              src={aboutTeamImg}
+              alt="Ernest Windows team member giving thumbs up"
+              className="rounded-xl max-w-xs"
+            />
           </div>
 
           {/* Right */}
@@ -26,11 +31,6 @@ const AboutSection = () => {
               cost until expectations are met. Every project is personalized to suit individual
               needs because our goal is to provide exactly what our customers envision.
             </p>
-            <img
-              src={aboutTeamImg}
-              alt="Ernest Windows team member giving thumbs up"
-              className="rounded-xl max-w-xs mx-auto mt-4"
-            />
           </div>
         </div>
       </div>

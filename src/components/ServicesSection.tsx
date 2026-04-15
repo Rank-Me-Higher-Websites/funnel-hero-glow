@@ -65,9 +65,9 @@ const ServicesSection = () => {
               </div>
               <h3 className="text-sm md:text-lg font-extrabold text-navy-foreground mb-1 md:mb-2">{s.title}</h3>
               <p className="text-navy-foreground/70 text-xs md:text-sm leading-relaxed mb-3 md:mb-4 flex-1">{s.desc}</p>
-              <a href="tel:+18002706228" className="inline-flex items-center gap-1.5 text-accent text-xs md:text-sm font-bold hover:gap-2.5 transition-all mt-auto">
+              <button onClick={() => setQuoteOpen(true)} className="inline-flex items-center gap-1.5 text-accent text-xs md:text-sm font-bold hover:gap-2.5 transition-all mt-auto cursor-pointer">
                 Get Quote <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              </a>
+              </button>
             </div>
           ))}
         </div>

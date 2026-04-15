@@ -91,7 +91,7 @@ const ReviewsSection = () => {
 
         <div className="text-center mt-4 md:mt-6">
           <a
-            href="https://www.google.com/maps/place/Ernest+Windows,Inc"
+            href="https://share.google/cGlLJyCvjkwGuCOhz"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border-2 border-navy text-navy font-bold px-5 py-2.5 md:px-7 md:py-3 rounded-lg hover:bg-navy hover:text-white transition-all text-sm md:text-base"

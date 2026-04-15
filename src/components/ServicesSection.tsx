@@ -36,7 +36,7 @@ const ServicesSection = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <>
-    <section className="bg-secondary bg-pattern-grid py-6 md:py-10">
+    <section className="bg-secondary py-6 md:py-10">
       <div className="container mx-auto px-3 md:px-4">
         <div className="text-center max-w-2xl mx-auto mb-4 md:mb-5">
           <p className="text-trust-blue font-bold text-xs uppercase tracking-widest mb-1">
@@ -51,15 +51,15 @@ const ServicesSection = () => {
           {services.map((s) => (
             <div
               key={s.title}
-              className="bg-navy text-navy-foreground p-4 md:p-5 rounded-xl border-2 border-navy-foreground/10 shadow-sm hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
+              className="bg-navy text-navy-foreground p-4 md:p-5 rounded-xl border-2 border-navy-foreground/10 shadow-sm hover:shadow-lg transition-all duration-300 group relative overflow-hidden flex flex-col"
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className={`w-10 h-10 md:w-11 md:h-11 ${s.bgColor} rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform`}>
                 <s.icon className={`w-5 h-5 ${s.color}`} />
               </div>
               <h3 className="text-sm font-extrabold text-navy-foreground mb-1">{s.title}</h3>
-              <p className="text-navy-foreground/70 text-xs leading-relaxed mb-2 md:mb-3">{s.desc}</p>
-              <a href="tel:+18002706228" className="inline-flex items-center gap-1 text-accent text-xs font-bold hover:gap-2 transition-all">
+              <p className="text-navy-foreground/70 text-xs leading-relaxed mb-2 md:mb-3 flex-1">{s.desc}</p>
+              <a href="tel:+18002706228" className="inline-flex items-center gap-1 text-accent text-xs font-bold hover:gap-2 transition-all mt-auto">
                 Get Quote <ArrowRight className="w-3 h-3" />
               </a>
             </div>

@@ -37,7 +37,7 @@ const HeroSection = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/75" />
         <div className="relative container mx-auto px-3 md:px-4">
           <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-center">
             {/* VSL Video - Shows FIRST on mobile */}

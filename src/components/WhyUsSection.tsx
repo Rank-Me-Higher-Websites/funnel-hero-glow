@@ -15,7 +15,7 @@ const WhyUsSection = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <>
-    <section className="bg-navy text-navy-foreground py-6 md:py-10">
+    <section className="bg-navy text-navy-foreground py-6 md:py-12">
       <div className="container mx-auto px-3 md:px-4">
         <div className="grid md:grid-cols-2 gap-4 md:gap-6 items-center">
           <div className="grid grid-cols-2 gap-2 md:gap-3 order-2 md:order-1">

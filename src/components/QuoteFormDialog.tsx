@@ -49,22 +49,22 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
   };
 
   const inputClass =
-    "w-full rounded-lg border-2 border-foreground/30 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent";
+    "w-full rounded-lg border-2 border-foreground/30 bg-background px-3 py-2 md:px-4 md:py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent";
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto mx-4 rounded-xl p-4 md:p-6">
         <DialogHeader>
-          <DialogTitle className="text-xl font-black text-foreground flex items-center gap-2">
-            <Phone className="w-5 h-5 text-accent" />
+          <DialogTitle className="text-lg md:text-xl font-black text-foreground flex items-center gap-2">
+            <Phone className="w-4 h-4 md:w-5 md:h-5 text-accent" />
             Get Your Free Quote
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-xs md:text-sm">
             Fill out the form below and we'll get back to you ASAP.
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-3 mt-2">
+        <form onSubmit={handleSubmit} className="space-y-2.5 md:space-y-3 mt-1 md:mt-2">
           <input
             name="fullName"
             placeholder="Full Name"
@@ -123,7 +123,7 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
             name="details"
             placeholder="House Details (optional)"
             maxLength={1000}
-            rows={3}
+            rows={2}
             value={formData.details}
             onChange={handleChange}
             className={inputClass}
@@ -131,7 +131,7 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-accent text-accent-foreground font-bold py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50"
+            className="w-full bg-accent text-accent-foreground font-bold py-2.5 md:py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50 text-sm md:text-base"
           >
             {submitting ? "Sending..." : "Submit Request"}
           </button>

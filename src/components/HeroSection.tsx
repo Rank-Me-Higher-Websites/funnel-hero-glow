@@ -124,15 +124,15 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="order-1 md:order-2" id="quote-form">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 md:p-7 shadow-2xl">
-                <h2 className="text-lg md:text-xl font-black text-white text-center mb-1" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
+            <div className="order-1 md:order-2 max-w-sm mx-auto md:mx-0 md:ml-auto" id="quote-form">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 md:p-5 shadow-2xl">
+                <h2 className="text-base md:text-lg font-black text-white text-center mb-0.5" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
                   Get Your Free Quote
                 </h2>
-                <p className="text-white/70 text-xs text-center mb-4">
+                <p className="text-white/70 text-[10px] md:text-xs text-center mb-3">
                   Fill out the form and we'll get back to you ASAP.
                 </p>
-                <form onSubmit={handleSubmit} className="space-y-3" data-testid="form-hero-quote">
+                <form onSubmit={handleSubmit} className="space-y-2" data-testid="form-hero-quote">
                   <input
                     name="fullName"
                     placeholder="Full Name"
@@ -143,30 +143,28 @@ const HeroSection = () => {
                     className={inputClass}
                     data-testid="input-fullname"
                   />
-                  <div className="grid grid-cols-2 gap-3">
-                    <input
-                      name="email"
-                      type="email"
-                      placeholder="Email"
-                      required
-                      maxLength={255}
-                      value={formData.email}
-                      onChange={handleChange}
-                      className={inputClass}
-                      data-testid="input-email"
-                    />
-                    <input
-                      name="phone"
-                      type="tel"
-                      placeholder="Phone Number"
-                      required
-                      maxLength={20}
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className={inputClass}
-                      data-testid="input-phone"
-                    />
-                  </div>
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    required
+                    maxLength={255}
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={inputClass}
+                    data-testid="input-email"
+                  />
+                  <input
+                    name="phone"
+                    type="tel"
+                    placeholder="Phone Number"
+                    required
+                    maxLength={20}
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className={inputClass}
+                    data-testid="input-phone"
+                  />
                   <select
                     name="service"
                     required
@@ -207,16 +205,35 @@ const HeroSection = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full bg-accent text-accent-foreground font-black py-3.5 rounded-lg hover:brightness-110 transition-all disabled:opacity-50 text-sm md:text-base animate-pulse-glow"
+                    className="w-full bg-accent text-accent-foreground font-black py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50 text-sm animate-pulse-glow"
                     data-testid="button-submit-quote"
                   >
                     <Phone className="w-4 h-4 inline mr-2" />
                     {submitting ? "Sending..." : "Submit Request"}
                   </button>
                 </form>
-                <p className="text-white/50 text-[10px] text-center mt-3">
+                <p className="text-white/50 text-[10px] text-center mt-2">
                   No spam. No obligation. 100% free estimate.
                 </p>
+              </div>
+
+              <div className="flex justify-center gap-2 md:gap-3 mt-3">
+                <div className="bg-accent text-accent-foreground px-2.5 py-1.5 rounded-lg shadow-md text-center">
+                  <div className="text-sm md:text-base font-black">22+</div>
+                  <div className="text-[8px] md:text-[9px] font-semibold opacity-90">Years Exp.</div>
+                </div>
+                <div className="bg-accent text-accent-foreground px-2.5 py-1.5 rounded-lg shadow-md text-center">
+                  <div className="text-sm md:text-base font-black">100k+</div>
+                  <div className="text-[8px] md:text-[9px] font-semibold opacity-90">Projects</div>
+                </div>
+                <div className="bg-accent text-accent-foreground px-2.5 py-1.5 rounded-lg shadow-md text-center">
+                  <div className="text-sm md:text-base font-black">500+</div>
+                  <div className="text-[8px] md:text-[9px] font-semibold opacity-90">5-Star Reviews</div>
+                </div>
+                <div className="bg-accent text-accent-foreground px-2.5 py-1.5 rounded-lg shadow-md text-center">
+                  <div className="text-sm md:text-base font-black">89</div>
+                  <div className="text-[8px] md:text-[9px] font-semibold opacity-90">Expert Workers</div>
+                </div>
               </div>
             </div>
           </div>

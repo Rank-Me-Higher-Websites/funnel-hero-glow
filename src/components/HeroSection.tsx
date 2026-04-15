@@ -124,7 +124,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="order-1 md:order-2 max-w-sm mx-auto md:mx-0 md:ml-auto" id="quote-form">
+            <div className="order-1 md:order-2 max-w-md mx-auto" id="quote-form">
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 md:p-5 shadow-2xl">
                 <h2 className="text-base md:text-lg font-black text-white text-center mb-0.5" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
                   Get Your Free Quote

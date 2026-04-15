@@ -36,65 +36,65 @@ const reviews = [
 const StarRating = () => (
   <div className="flex gap-0.5">
     {[...Array(5)].map((_, i) => (
-      <Star key={i} className="w-3 h-3 md:w-3.5 md:h-3.5 fill-amber-400 text-amber-400" />
+      <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-amber-400 text-amber-400" />
     ))}
   </div>
 );
 
 const ReviewsSection = () => {
   return (
-    <section className="bg-white py-6 md:py-12 min-h-[60vh] flex items-center">
-      <div className="container mx-auto px-3 md:px-4 w-full">
-        <div className="text-center max-w-2xl mx-auto mb-3 md:mb-5">
-          <p className="text-navy font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">
+    <section className="bg-white py-10 md:py-20 min-h-[60vh] flex items-center">
+      <div className="container mx-auto px-4 md:px-6 w-full">
+        <div className="text-center max-w-3xl mx-auto mb-6 md:mb-10">
+          <p className="text-navy font-bold text-xs md:text-sm uppercase tracking-widest mb-2">
             ✦ Customer Reviews
           </p>
-          <h2 className="text-base md:text-2xl font-black leading-tight mb-2 text-navy">
+          <h2 className="text-2xl md:text-4xl font-black leading-tight mb-3 text-navy">
             What Our Customers{" "}
             <span className="text-accent">Are Saying</span>
           </h2>
-          <div className="flex items-center justify-center gap-1.5 mt-2">
+          <div className="flex items-center justify-center gap-2 mt-3">
             <StarRating />
-            <span className="text-navy font-semibold text-xs">4.8/5</span>
-            <span className="text-navy/80 text-[10px] md:text-xs font-medium">
+            <span className="text-navy font-semibold text-sm md:text-base">4.8/5</span>
+            <span className="text-navy/80 text-xs md:text-sm font-medium">
               · 2,849 reviews on Google
             </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-navy border border-navy/10 rounded-lg p-3 md:p-5 flex flex-col gap-1.5 md:gap-3 hover:shadow-lg transition-shadow"
+              className="bg-navy border border-navy/10 rounded-xl p-4 md:p-6 flex flex-col gap-2 md:gap-4 hover:shadow-lg transition-shadow"
               data-testid={`card-review-${index}`}
             >
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 md:w-9 md:h-9 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold text-[10px] md:text-sm flex-shrink-0">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold text-xs md:text-base flex-shrink-0">
                   {review.name.charAt(0)}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="font-bold text-[10px] md:text-sm truncate text-white" data-testid={`text-reviewer-name-${index}`}>
+                  <p className="font-bold text-xs md:text-base truncate text-white" data-testid={`text-reviewer-name-${index}`}>
                     {review.name}
                   </p>
-                  <p className="text-white/50 text-[8px] md:text-xs">{review.date}</p>
+                  <p className="text-white/50 text-[10px] md:text-sm">{review.date}</p>
                 </div>
-                <Quote className="w-3.5 h-3.5 md:w-5 md:h-5 text-accent/30 flex-shrink-0 hidden md:block" />
+                <Quote className="w-5 h-5 md:w-6 md:h-6 text-accent/30 flex-shrink-0 hidden md:block" />
               </div>
               <StarRating />
-              <p className="text-white/80 text-[10px] md:text-sm leading-relaxed flex-1 line-clamp-3 md:line-clamp-none">
+              <p className="text-white/80 text-xs md:text-sm leading-relaxed flex-1 line-clamp-4 md:line-clamp-none">
                 "{review.text}"
               </p>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-4 md:mt-6">
+        <div className="text-center mt-6 md:mt-10">
           <a
             href="https://www.google.com/maps/place/Ernest+Windows,Inc"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 border-2 border-navy text-navy font-bold px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-navy hover:text-white transition-all text-xs md:text-sm"
+            className="inline-flex items-center gap-2 border-2 border-navy text-navy font-bold px-6 py-3 md:px-8 md:py-4 rounded-lg hover:bg-navy hover:text-white transition-all text-sm md:text-base"
             data-testid="link-view-all-reviews"
           >
             View All Reviews on Google

@@ -2,11 +2,10 @@ import aboutTeamImg from "@/assets/about-team-cropped.png";
 
 const AboutSection = () => {
   return (
-    <section className="bg-background bg-pattern-dots py-6 md:py-12 min-h-[60vh] flex items-center">
-      <div className="container mx-auto px-3 md:px-4 w-full">
-        <div className="flex flex-col md:flex-row gap-4 md:gap-5 items-start max-w-4xl mx-auto">
-          {/* Image */}
-          <div className="flex-shrink-0 w-32 md:w-48 mx-auto md:mx-0">
+    <section className="bg-background bg-pattern-dots py-10 md:py-20 min-h-[60vh] flex items-center">
+      <div className="container mx-auto px-4 md:px-6 w-full">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center max-w-5xl mx-auto">
+          <div className="flex-shrink-0 w-40 md:w-64 mx-auto md:mx-0">
             <img
               src={aboutTeamImg}
               alt="Ernest Windows team member giving thumbs up"
@@ -14,11 +13,10 @@ const AboutSection = () => {
             />
           </div>
 
-          {/* Text */}
           <div>
-            <p className="text-primary font-bold text-xs uppercase tracking-widest mb-1">Ernest Windows</p>
-            <h2 className="text-lg md:text-2xl font-black text-foreground mb-2 md:mb-3">About Us</h2>
-            <div className="space-y-2 md:space-y-3 text-foreground text-xs md:text-sm leading-relaxed">
+            <p className="text-primary font-bold text-xs md:text-sm uppercase tracking-widest mb-2">Ernest Windows</p>
+            <h2 className="text-2xl md:text-4xl font-black text-foreground mb-3 md:mb-5">About Us</h2>
+            <div className="space-y-3 md:space-y-4 text-foreground text-sm md:text-base leading-relaxed">
               <p>
                 At Ernest Windows, we are a team of dedicated professionals specializing in house
                 maintenance services. Each job is handled by skilled experts, ensuring efficiency

@@ -43,9 +43,9 @@ const StarRating = () => (
 
 const ReviewsSection = () => {
   return (
-    <section className="bg-white py-8 md:py-14">
+    <section className="bg-white py-8 md:py-10">
       <div className="container mx-auto px-4 md:px-6 w-full">
-        <div className="text-center max-w-2xl mx-auto mb-5 md:mb-8">
+        <div className="text-center max-w-2xl mx-auto mb-4 md:mb-6">
           <p className="text-navy font-bold text-xs md:text-sm uppercase tracking-widest mb-1">
             ✦ Customer Reviews
           </p>
@@ -89,7 +89,7 @@ const ReviewsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-5 md:mt-8">
+        <div className="text-center mt-4 md:mt-6">
           <a
             href="https://www.google.com/maps/place/Ernest+Windows,Inc"
             target="_blank"

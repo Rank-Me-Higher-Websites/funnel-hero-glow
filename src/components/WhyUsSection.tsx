@@ -16,12 +16,12 @@ const WhyUsSection = () => {
     <>
     <section className="bg-navy text-navy-foreground py-10 md:py-20 min-h-[60vh] flex items-center">
       <div className="container mx-auto px-4 md:px-6 w-full">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-stretch max-w-5xl mx-auto">
           <div className="order-2 md:order-1">
             <img
               src={windowCleaningImg}
               alt="Professional window cleaning"
-              className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] border-2 border-accent/20"
+              className="rounded-2xl shadow-2xl w-full h-full object-cover border-2 border-accent/20"
             />
           </div>
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Droplets, Wind, Home, Phone, ArrowRight, Shield, Clock, ThumbsUp } from "lucide-react";
 import QuoteFormDialog from "@/components/QuoteFormDialog";
-import servicesBg from "@/assets/services-bg.webp";
+import servicesBg from "@/assets/services-bg.png";
 
 const services = [
   {

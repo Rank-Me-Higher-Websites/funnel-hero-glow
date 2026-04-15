@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Phone, Play, Star, CheckCircle } from "lucide-react";
 import bbbBadge from "@/assets/bbb-badge.png";
 import ernestLogo from "@/assets/ernest-logo.png";
+import heroBg from "@/assets/hero-bg.webp";
 import QuoteFormDialog from "@/components/QuoteFormDialog";
 
 const HeroSection = () => {
@@ -31,8 +32,13 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <section className="bg-primary text-primary-foreground py-6 md:py-28 lg:py-32">
-        <div className="container mx-auto px-3 md:px-4">
+      <section className="relative bg-primary text-primary-foreground py-6 md:py-28 lg:py-32 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        <div className="absolute inset-0 bg-primary/85" />
+        <div className="relative container mx-auto px-3 md:px-4">
           <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-center">
             {/* VSL Video - Shows FIRST on mobile */}
             <div className="relative order-1 md:order-2">

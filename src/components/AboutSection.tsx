@@ -2,8 +2,8 @@ import aboutTeamImg from "@/assets/about-team-cropped.png";
 
 const AboutSection = () => {
   return (
-    <section className="bg-background bg-pattern-dots py-6 md:py-12">
-      <div className="container mx-auto px-3 md:px-4">
+    <section className="bg-background bg-pattern-dots py-6 md:py-12 min-h-[60vh] flex items-center">
+      <div className="container mx-auto px-3 md:px-4 w-full">
         <div className="flex flex-col md:flex-row gap-4 md:gap-5 items-start max-w-4xl mx-auto">
           {/* Image */}
           <div className="flex-shrink-0 w-32 md:w-48 mx-auto md:mx-0">

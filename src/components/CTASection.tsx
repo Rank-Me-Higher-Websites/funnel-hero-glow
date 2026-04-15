@@ -6,8 +6,8 @@ const CTASection = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <>
-      <section className="bg-background py-6 md:py-12">
-        <div className="container mx-auto px-3 md:px-4 text-center max-w-4xl">
+      <section className="bg-background py-6 md:py-12 min-h-[60vh] flex items-center">
+        <div className="container mx-auto px-3 md:px-4 text-center max-w-4xl w-full">
           <h2 className="text-xl md:text-3xl font-black text-foreground mb-2">
             Ready For Spotless Windows?
           </h2>

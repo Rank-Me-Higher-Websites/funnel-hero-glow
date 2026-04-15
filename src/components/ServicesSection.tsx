@@ -37,7 +37,7 @@ const ServicesSection = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <>
-    <section className="relative py-6 md:py-12 overflow-hidden">
+    <section className="relative py-6 md:py-12 overflow-hidden min-h-[60vh] flex items-center">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${servicesBg})` }}

@@ -43,8 +43,8 @@ const StarRating = () => (
 
 const ReviewsSection = () => {
   return (
-    <section className="bg-white py-6 md:py-12">
-      <div className="container mx-auto px-3 md:px-4">
+    <section className="bg-white py-6 md:py-12 min-h-[60vh] flex items-center">
+      <div className="container mx-auto px-3 md:px-4 w-full">
         <div className="text-center max-w-2xl mx-auto mb-3 md:mb-5">
           <p className="text-navy font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">
             ✦ Customer Reviews

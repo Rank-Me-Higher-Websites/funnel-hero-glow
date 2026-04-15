@@ -55,7 +55,7 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
   return (
     <div className="fixed inset-0 z-50">
       <div className="fixed inset-0 bg-black/60" onClick={() => onOpenChange(false)} />
-      <div className="fixed inset-x-0 bottom-0 md:bottom-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-md md:rounded-xl bg-white rounded-t-2xl shadow-2xl z-50 max-h-[85vh] overflow-y-auto">
+      <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-md bg-white rounded-xl shadow-2xl z-50 max-h-[85vh] overflow-y-auto">
         <div className="p-5 md:p-6">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-lg font-black text-gray-900 flex items-center gap-2">

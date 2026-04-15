@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Shield, Clock, Award, ThumbsUp, Phone } from "lucide-react";
 import QuoteFormDialog from "@/components/QuoteFormDialog";
-import windowCleaning1 from "@/assets/window-cleaning-1.png";
-import windowCleaning2 from "@/assets/window-cleaning-2.png";
+import windowCleaningImg from "@/assets/window-cleaning-hero.png";
 
 const features = [
   { icon: Shield, title: "Fully Licensed & Insured", desc: "Complete peace of mind" },
@@ -18,16 +17,11 @@ const WhyUsSection = () => {
     <section className="bg-navy text-navy-foreground py-10 md:py-20 min-h-[60vh] flex items-center">
       <div className="container mx-auto px-4 md:px-6 w-full">
         <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 gap-3 md:gap-4 order-2 md:order-1">
+          <div className="order-2 md:order-1">
             <img
-              src={windowCleaning1}
+              src={windowCleaningImg}
               alt="Professional window cleaning"
-              className="rounded-xl shadow-2xl w-full object-cover aspect-square border-2 border-accent/20"
-            />
-            <img
-              src={windowCleaning2}
-              alt="Window cleaning on ladder"
-              className="rounded-xl shadow-2xl w-full object-cover aspect-square border-2 border-accent/20"
+              className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] border-2 border-accent/20"
             />
           </div>
 

@@ -40,14 +40,14 @@ const AboutSection = () => {
               {values.map((v) => (
                 <div
                   key={v.title}
-                  className="flex items-center gap-3 bg-navy/5 border border-navy/10 p-3 md:p-4 rounded-lg"
+                  className="flex items-center gap-3 bg-navy text-white p-3 md:p-4 rounded-lg"
                 >
                   <div className="w-9 h-9 md:w-10 md:h-10 rounded-md bg-accent/15 flex items-center justify-center flex-shrink-0">
                     <v.icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xs md:text-sm leading-tight text-navy">{v.title}</h3>
-                    <p className="text-navy/60 text-[11px] md:text-xs">{v.desc}</p>
+                    <h3 className="font-bold text-xs md:text-sm leading-tight text-white">{v.title}</h3>
+                    <p className="text-white/60 text-[11px] md:text-xs">{v.desc}</p>
                   </div>
                 </div>
               ))}
@@ -58,7 +58,7 @@ const AboutSection = () => {
             <img
               src={aboutTeamImg}
               alt="Ernest Windows team"
-              className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] border-2 border-accent/20"
+              className="rounded-2xl shadow-2xl w-full object-cover aspect-square border-2 border-accent/20"
             />
           </div>
         </div>

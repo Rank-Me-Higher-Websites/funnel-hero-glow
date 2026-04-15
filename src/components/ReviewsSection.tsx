@@ -1,5 +1,4 @@
 import { Star, Quote } from "lucide-react";
-import googleLogo from "@/assets/google-business.png";
 
 const reviews = [
   {
@@ -37,39 +36,29 @@ const reviews = [
 const StarRating = () => (
   <div className="flex gap-0.5">
     {[...Array(5)].map((_, i) => (
-      <Star key={i} className="w-3 h-3 md:w-3.5 md:h-3.5 fill-accent text-accent" />
+      <Star key={i} className="w-3 h-3 md:w-3.5 md:h-3.5 fill-amber-400 text-amber-400" />
     ))}
   </div>
 );
 
 const ReviewsSection = () => {
   return (
-    <section className="bg-navy text-navy-foreground py-6 md:py-12">
+    <section className="bg-white py-6 md:py-12">
       <div className="container mx-auto px-3 md:px-4">
         <div className="text-center mb-4 md:mb-8">
-          <p className="text-trust-blue font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">
+          <p className="text-navy font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">
             ✦ Customer Reviews
           </p>
-          <h2 className="text-base md:text-3xl font-black leading-tight mb-2">
+          <h2 className="text-base md:text-3xl font-black leading-tight mb-2 text-navy">
             What Our Customers{" "}
             <span className="text-accent">Are Saying</span>
           </h2>
-          <div className="flex items-center justify-center gap-2 mt-2">
-            <img
-              src={googleLogo}
-              alt="Google Business Profile"
-              className="w-7 h-7 md:w-10 md:h-10 rounded-lg object-cover"
-              data-testid="img-google-logo"
-            />
-            <div className="text-left">
-              <div className="flex items-center gap-1">
-                <StarRating />
-                <span className="text-navy-foreground/80 text-xs font-semibold">4.8</span>
-              </div>
-              <p className="text-navy-foreground/60 text-[10px] md:text-xs">
-                2,849 reviews on Google
-              </p>
-            </div>
+          <div className="flex items-center justify-center gap-1.5 mt-2">
+            <StarRating />
+            <span className="text-navy/70 text-xs font-semibold">4.8/5</span>
+            <span className="text-navy/50 text-[10px] md:text-xs">
+              · 2,849 reviews on Google
+            </span>
           </div>
         </div>
 
@@ -77,7 +66,7 @@ const ReviewsSection = () => {
           {reviews.map((review, index) => (
             <div
               key={index}
-              className="bg-navy-foreground/5 border border-navy-foreground/10 rounded-lg p-3 md:p-5 flex flex-col gap-1.5 md:gap-3 hover:border-accent/30 transition-colors"
+              className="bg-navy border border-navy/10 rounded-lg p-3 md:p-5 flex flex-col gap-1.5 md:gap-3 hover:shadow-lg transition-shadow"
               data-testid={`card-review-${index}`}
             >
               <div className="flex items-center gap-2">
@@ -85,15 +74,15 @@ const ReviewsSection = () => {
                   {review.name.charAt(0)}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="font-bold text-[10px] md:text-sm truncate" data-testid={`text-reviewer-name-${index}`}>
+                  <p className="font-bold text-[10px] md:text-sm truncate text-white" data-testid={`text-reviewer-name-${index}`}>
                     {review.name}
                   </p>
-                  <p className="text-navy-foreground/50 text-[8px] md:text-xs">{review.date}</p>
+                  <p className="text-white/50 text-[8px] md:text-xs">{review.date}</p>
                 </div>
                 <Quote className="w-3.5 h-3.5 md:w-5 md:h-5 text-accent/30 flex-shrink-0 hidden md:block" />
               </div>
               <StarRating />
-              <p className="text-navy-foreground/70 text-[10px] md:text-sm leading-relaxed flex-1 line-clamp-3 md:line-clamp-none">
+              <p className="text-white/80 text-[10px] md:text-sm leading-relaxed flex-1 line-clamp-3 md:line-clamp-none">
                 "{review.text}"
               </p>
             </div>
@@ -105,7 +94,7 @@ const ReviewsSection = () => {
             href="https://www.google.com/maps/place/Ernest+Windows,Inc"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 border-2 border-accent text-accent font-bold px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-accent hover:text-accent-foreground transition-all text-xs md:text-sm"
+            className="inline-flex items-center gap-1.5 border-2 border-navy text-navy font-bold px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-navy hover:text-white transition-all text-xs md:text-sm"
             data-testid="link-view-all-reviews"
           >
             View All Reviews on Google

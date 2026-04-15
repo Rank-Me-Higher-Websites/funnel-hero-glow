@@ -42,13 +42,13 @@ const ServicesSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${servicesBg})` }}
       />
-      <div className="absolute inset-0 bg-white/90" />
+      <div className="absolute inset-0 bg-black/60" />
       <div className="relative container mx-auto px-3 md:px-4">
         <div className="text-center max-w-2xl mx-auto mb-3 md:mb-5">
           <p className="text-trust-blue font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">
             ✦ Our Services
           </p>
-          <h2 className="text-base md:text-2xl font-black text-foreground leading-tight">
+          <h2 className="text-base md:text-2xl font-black text-white leading-tight" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.5)" }}>
             Cleaning Solutions For <span className="text-accent">Every Need</span>
           </h2>
         </div>
@@ -74,7 +74,7 @@ const ServicesSection = () => {
 
         <div className="flex flex-wrap justify-center gap-2 md:gap-6 mt-3 md:mt-5 max-w-4xl mx-auto">
           {highlights.map((h) => (
-            <div key={h.text} className="flex items-center gap-1.5 text-foreground/90 justify-center">
+            <div key={h.text} className="flex items-center gap-1.5 text-white/90 justify-center">
               <h.icon className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent" />
               <span className="text-[10px] md:text-xs font-bold">{h.text}</span>
             </div>

@@ -16,12 +16,12 @@ const WhyUsSection = () => {
     <>
     <section className="bg-navy text-navy-foreground py-10 md:py-20 min-h-[60vh] flex items-center">
       <div className="container mx-auto px-4 md:px-6 w-full">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-stretch max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center max-w-5xl mx-auto">
           <div className="order-2 md:order-1">
             <img
               src={windowCleaningImg}
               alt="Professional window cleaning"
-              className="rounded-2xl shadow-2xl w-full h-full object-cover border-2 border-accent/20"
+              className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] border-2 border-accent/20"
             />
           </div>
 
@@ -45,7 +45,7 @@ const WhyUsSection = () => {
               {features.map((f) => (
                 <div
                   key={f.title}
-                  className="flex items-start gap-3 bg-navy-foreground/5 border border-navy-foreground/10 p-3 md:p-4 rounded-lg"
+                  className="flex items-center gap-3 bg-navy-foreground/5 border border-navy-foreground/10 p-3 md:p-4 rounded-lg"
                 >
                   <div className="w-9 h-9 md:w-10 md:h-10 rounded-md bg-accent/15 flex items-center justify-center flex-shrink-0">
                     <f.icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />

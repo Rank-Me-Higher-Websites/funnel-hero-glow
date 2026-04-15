@@ -37,7 +37,7 @@ const HeroSection = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0 bg-primary/85" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative container mx-auto px-3 md:px-4">
           <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-center">
             {/* VSL Video - Shows FIRST on mobile */}
@@ -82,12 +82,12 @@ const HeroSection = () => {
                 #1 Rated in Chicagoland
               </div>
 
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-black leading-[1.1] text-primary-foreground">
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-black leading-[1.1] text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
                 Crystal Clear Windows.{" "}
                 <span className="text-accent">Guaranteed.</span>
               </h1>
 
-              <p className="text-xs md:text-sm text-primary-foreground/70 max-w-lg leading-relaxed">
+              <p className="text-xs md:text-sm text-white/90 max-w-lg leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
                 Ernest Windows has been providing five-star cleaning services to
                 Chicagoland residents and businesses since 2003. Window washing,
                 power washing, gutter cleaning & carpet cleaning.
@@ -102,7 +102,7 @@ const HeroSection = () => {
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-1.5 md:gap-2">
                     <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-trust-green flex-shrink-0" />
-                    <span className="font-semibold text-primary-foreground text-xs md:text-sm">{item}</span>
+                    <span className="font-bold text-white text-xs md:text-sm drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">{item}</span>
                   </div>
                 ))}
               </div>

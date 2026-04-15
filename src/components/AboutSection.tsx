@@ -3,7 +3,7 @@ import aboutTeamImg from "@/assets/about-team.webp";
 
 const values = [
   { icon: Users, title: "Expert Team", desc: "89 skilled professionals" },
-  { icon: Heart, title: "Customer First", desc: "Your satisfaction is our priority" },
+  { icon: Heart, title: "Customer First", desc: "Satisfaction is our priority" },
   { icon: CheckCircle, title: "100% Guarantee", desc: "We redo it free if not happy" },
   { icon: Star, title: "22+ Years", desc: "Trusted since 2003" },
 ];
@@ -40,7 +40,7 @@ const AboutSection = () => {
               {values.map((v) => (
                 <div
                   key={v.title}
-                  className="flex items-center gap-3 bg-navy text-white p-3 md:p-4 rounded-lg"
+                  className="flex items-center gap-3 bg-navy text-white p-3 md:p-4 rounded-lg h-16 md:h-[72px]"
                 >
                   <div className="w-9 h-9 md:w-10 md:h-10 rounded-md bg-accent/15 flex items-center justify-center flex-shrink-0">
                     <v.icon className="w-4 h-4 md:w-5 md:h-5 text-accent" />

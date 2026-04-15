@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Phone } from "lucide-react";
+import { Phone, X } from "lucide-react";
 
 const services = [
   "Window Cleaning",
@@ -48,96 +47,50 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
     }
   };
 
+  if (!open) return null;
+
   const inputClass =
-    "w-full rounded-lg border-2 border-foreground/30 bg-background px-3 py-2 md:px-4 md:py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent";
+    "w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent";
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto mx-4 rounded-xl p-4 md:p-6">
-        <DialogHeader>
-          <DialogTitle className="text-lg md:text-xl font-black text-foreground flex items-center gap-2">
-            <Phone className="w-4 h-4 md:w-5 md:h-5 text-accent" />
-            Get Your Free Quote
-          </DialogTitle>
-          <DialogDescription className="text-xs md:text-sm">
-            Fill out the form below and we'll get back to you ASAP.
-          </DialogDescription>
-        </DialogHeader>
+    <div className="fixed inset-0 z-50">
+      <div className="fixed inset-0 bg-black/60" onClick={() => onOpenChange(false)} />
+      <div className="fixed inset-x-0 bottom-0 md:bottom-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-md md:rounded-xl bg-white rounded-t-2xl shadow-2xl z-50 max-h-[85vh] overflow-y-auto">
+        <div className="p-5 md:p-6">
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-lg font-black text-gray-900 flex items-center gap-2">
+              <Phone className="w-4 h-4 text-accent" />
+              Get Your Free Quote
+            </h2>
+            <button onClick={() => onOpenChange(false)} className="p-1 rounded-full hover:bg-gray-100">
+              <X className="w-5 h-5 text-gray-500" />
+            </button>
+          </div>
+          <p className="text-gray-500 text-xs mb-4">Fill out the form and we'll get back to you ASAP.</p>
 
-        <form onSubmit={handleSubmit} className="space-y-2.5 md:space-y-3 mt-1 md:mt-2">
-          <input
-            name="fullName"
-            placeholder="Full Name"
-            required
-            maxLength={100}
-            value={formData.fullName}
-            onChange={handleChange}
-            className={inputClass}
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            required
-            maxLength={255}
-            value={formData.email}
-            onChange={handleChange}
-            className={inputClass}
-          />
-          <input
-            name="phone"
-            type="tel"
-            placeholder="Phone Number"
-            required
-            maxLength={20}
-            value={formData.phone}
-            onChange={handleChange}
-            className={inputClass}
-          />
-          <select
-            name="service"
-            required
-            value={formData.service}
-            onChange={handleChange}
-            className={inputClass}
-          >
-            <option value="" disabled>
-              Select Service Needed
-            </option>
-            {services.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
-          <input
-            name="address"
-            placeholder="Address"
-            required
-            maxLength={200}
-            value={formData.address}
-            onChange={handleChange}
-            className={inputClass}
-          />
-          <textarea
-            name="details"
-            placeholder="House Details (optional)"
-            maxLength={1000}
-            rows={2}
-            value={formData.details}
-            onChange={handleChange}
-            className={inputClass}
-          />
-          <button
-            type="submit"
-            disabled={submitting}
-            className="w-full bg-accent text-accent-foreground font-bold py-2.5 md:py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50 text-sm md:text-base"
-          >
-            {submitting ? "Sending..." : "Submit Request"}
-          </button>
-        </form>
-      </DialogContent>
-    </Dialog>
+          <form onSubmit={handleSubmit} className="space-y-2.5">
+            <input name="fullName" placeholder="Full Name" required maxLength={100} value={formData.fullName} onChange={handleChange} className={inputClass} />
+            <input name="email" type="email" placeholder="Email" required maxLength={255} value={formData.email} onChange={handleChange} className={inputClass} />
+            <input name="phone" type="tel" placeholder="Phone Number" required maxLength={20} value={formData.phone} onChange={handleChange} className={inputClass} />
+            <select name="service" required value={formData.service} onChange={handleChange} className={inputClass}>
+              <option value="" disabled>Select Service Needed</option>
+              {services.map((s) => (
+                <option key={s} value={s}>{s}</option>
+              ))}
+            </select>
+            <input name="address" placeholder="Address" required maxLength={200} value={formData.address} onChange={handleChange} className={inputClass} />
+            <textarea name="details" placeholder="House Details (optional)" maxLength={1000} rows={2} value={formData.details} onChange={handleChange} className={inputClass} />
+            <button
+              type="submit"
+              disabled={submitting}
+              className="w-full bg-accent text-accent-foreground font-bold py-3 rounded-lg hover:brightness-110 transition-all disabled:opacity-50 text-sm"
+            >
+              {submitting ? "Sending..." : "Submit Request"}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
 

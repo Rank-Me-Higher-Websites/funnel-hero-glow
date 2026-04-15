@@ -2,7 +2,7 @@ import { MapPin } from "lucide-react";
 
 const areas = [
   {
-    label: "North & Northwest Suburbs",
+    label: "North & Northwest",
     cities: [
       "Lake Forest", "Highland Park", "Deerfield", "Glenview", "Glencoe",
       "Winnetka", "Wilmette", "Evanston", "Skokie", "Lincolnwood", "Park Ridge",
@@ -23,7 +23,7 @@ const areas = [
     ],
   },
   {
-    label: "South & Southwest Suburbs",
+    label: "South & Southwest",
     cities: [
       "Naperville", "Plainfield", "Romeoville", "Oswego", "Lemont",
       "Lockport", "Homer Glen", "Orland Park",
@@ -50,19 +50,19 @@ const ServiceAreasSection = () => {
           {areas.map((area) => (
             <div
               key={area.label}
-              className="bg-primary-foreground/10 rounded-xl border border-primary-foreground/15 p-3 md:p-5 space-y-2 md:space-y-3"
+              className="bg-primary-foreground/10 rounded-xl border border-primary-foreground/15 p-3 md:p-4"
             >
-              <h3 className="font-bold text-accent text-xs md:text-sm">{area.label}</h3>
-              <div className="flex flex-wrap gap-1 md:gap-1.5">
+              <h3 className="font-bold text-accent text-xs md:text-sm mb-2">{area.label}</h3>
+              <ul className="space-y-0.5">
                 {area.cities.map((city) => (
-                  <span
+                  <li
                     key={city}
-                    className="text-[10px] md:text-xs text-primary-foreground/80 bg-primary-foreground/10 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full"
+                    className="text-[10px] md:text-xs text-primary-foreground/80"
                   >
                     {city}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

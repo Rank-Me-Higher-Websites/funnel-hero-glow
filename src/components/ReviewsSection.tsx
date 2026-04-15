@@ -45,24 +45,24 @@ const ReviewsSection = () => {
   return (
     <section className="bg-white py-6 md:py-12">
       <div className="container mx-auto px-3 md:px-4">
-        <div className="text-center mb-4 md:mb-8">
+        <div className="text-center max-w-2xl mx-auto mb-3 md:mb-5">
           <p className="text-navy font-bold text-[10px] md:text-xs uppercase tracking-widest mb-1">
             ✦ Customer Reviews
           </p>
-          <h2 className="text-base md:text-3xl font-black leading-tight mb-2 text-navy">
+          <h2 className="text-base md:text-2xl font-black leading-tight mb-2 text-navy">
             What Our Customers{" "}
             <span className="text-accent">Are Saying</span>
           </h2>
           <div className="flex items-center justify-center gap-1.5 mt-2">
             <StarRating />
-            <span className="text-navy/70 text-xs font-semibold">4.8/5</span>
-            <span className="text-navy/50 text-[10px] md:text-xs">
+            <span className="text-navy font-semibold text-xs">4.8/5</span>
+            <span className="text-navy/80 text-[10px] md:text-xs font-medium">
               · 2,849 reviews on Google
             </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 max-w-4xl mx-auto">
           {reviews.map((review, index) => (
             <div
               key={index}

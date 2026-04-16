@@ -117,7 +117,7 @@ const HeroSection = () => {
                     <Star key={i} className="w-3 h-3 md:w-4 md:h-4 text-accent fill-accent" />
                   ))}
                   <span className="ml-1 text-[9px] md:text-xs font-semibold text-primary-foreground/70">
-                    4.9/5 (500+ Reviews)
+                    4.9/5 (2.8k+ Reviews)
                   </span>
                 </div>
               </div>
@@ -226,7 +226,7 @@ const HeroSection = () => {
                   <div className="text-[7px] md:text-[9px] font-semibold opacity-90">Projects</div>
                 </div>
                 <div className="bg-accent text-accent-foreground px-2 py-1 md:px-2.5 md:py-1.5 rounded-lg shadow-md text-center">
-                  <div className="text-xs md:text-base font-black">500+</div>
+                  <div className="text-xs md:text-base font-black">2.8k+</div>
                   <div className="text-[7px] md:text-[9px] font-semibold opacity-90">5-Star Reviews</div>
                 </div>
                 <div className="bg-accent text-accent-foreground px-2 py-1 md:px-2.5 md:py-1.5 rounded-lg shadow-md text-center">

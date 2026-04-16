@@ -81,8 +81,8 @@ const HeroSection = () => {
         <div className="relative container mx-auto px-3 md:px-4">
           <div className="grid md:grid-cols-2 gap-4 md:gap-10 items-start">
             <div className="space-y-2 md:space-y-4 order-1">
-              <div className="inline-flex items-center gap-1.5 bg-primary-foreground/10 text-primary-foreground px-2 py-0.5 md:px-3 md:py-1.5 rounded-full text-[9px] md:text-xs font-bold uppercase tracking-wide">
-                <Star className="w-2.5 h-2.5 md:w-3 md:h-3 fill-current" />
+              <div className="inline-flex items-center gap-1.5 bg-accent text-accent-foreground px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wide shadow-lg">
+                <Star className="w-3 h-3 md:w-3.5 md:h-3.5 fill-current" />
                 #1 Rated in Chicagoland
               </div>
 

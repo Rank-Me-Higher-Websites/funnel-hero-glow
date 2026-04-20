@@ -1,5 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Phone, X } from "lucide-react";
+
+const trackLead = () => {
+  if (typeof window !== "undefined" && (window as any).fbq) {
+    (window as any).fbq("track", "Lead");
+    console.log("[Pixel] Lead event fired");
+  } else {
+    console.warn("[Pixel] fbq not loaded yet");
+  }
+};
 
 const services = [
   "Window Cleaning",
@@ -28,12 +37,14 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
 
   const [submitting, setSubmitting] = useState(false);
 
+  useEffect(() => {
+    if (open) trackLead();
+  }, [open]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      (window as any).fbq("track", "Lead");
-    }
+    trackLead();
     try {
       await fetch("https://cdlagency.app.n8n.cloud/webhook/99751654-d1ae-4535-81fb-2e858e1c5220", {
         method: "POST",

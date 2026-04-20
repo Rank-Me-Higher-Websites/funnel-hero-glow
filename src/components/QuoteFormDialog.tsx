@@ -38,6 +38,9 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
         mode: "no-cors",
         body: JSON.stringify(formData),
       });
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "Lead");
+      }
       onOpenChange(false);
       setFormData({ fullName: "", email: "", phone: "", service: "", address: "", details: "" });
     } catch (err) {

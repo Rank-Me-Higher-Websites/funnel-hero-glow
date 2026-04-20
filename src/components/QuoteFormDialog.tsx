@@ -31,6 +31,9 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "Lead");
+    }
     try {
       await fetch("https://cdlagency.app.n8n.cloud/webhook/99751654-d1ae-4535-81fb-2e858e1c5220", {
         method: "POST",
@@ -38,9 +41,6 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
         mode: "no-cors",
         body: JSON.stringify(formData),
       });
-      if (typeof window !== "undefined" && (window as any).fbq) {
-        (window as any).fbq("track", "Lead");
-      }
       onOpenChange(false);
       setFormData({ fullName: "", email: "", phone: "", service: "", address: "", details: "" });
     } catch (err) {

@@ -2,12 +2,19 @@ import { useState, useEffect } from "react";
 import { Phone, X } from "lucide-react";
 
 const trackLead = () => {
-  if (typeof window !== "undefined" && (window as any).fbq) {
-    (window as any).fbq("track", "Lead");
-    console.log("[Pixel] Lead event fired");
-  } else {
-    console.warn("[Pixel] fbq not loaded yet");
-  }
+  const tryFire = (attempt = 0) => {
+    if (typeof window === "undefined") return;
+    const fbq = (window as any).fbq;
+    if (typeof fbq === "function") {
+      fbq("track", "Lead");
+      console.log("[Pixel] Lead event fired");
+    } else if (attempt < 10) {
+      setTimeout(() => tryFire(attempt + 1), 300);
+    } else {
+      console.warn("[Pixel] fbq never loaded — Lead not fired");
+    }
+  };
+  tryFire();
 };
 
 const services = [

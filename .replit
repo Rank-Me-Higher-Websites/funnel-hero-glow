@@ -1,13 +1,14 @@
-modules = ["nodejs-20", "web"]
+modules = ["nodejs-20", "web", "postgresql-16"]
 [agent]
 expertMode = true
 
 [nix]
 channel = "stable-25_05"
+packages = ["zip"]
 
 [deployment]
-deploymentTarget = "static"
-run = ["node", "./dist/index.cjs"]
+deploymentTarget = "autoscale"
+run = ["npm", "run", "start"]
 build = ["npm", "run", "build"]
 publicDir = "dist"
 
@@ -38,3 +39,12 @@ outputType = "webview"
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 24678
+externalPort = 3000
+
+[userenv]
+
+[userenv.shared]
+ADMIN_TOKEN = "ew_admin_mmfh2o1dup7lcxc0jnoi88"

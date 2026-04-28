@@ -53,16 +53,26 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
     setSubmitting(true);
     trackLead();
     try {
-      await fetch("https://cdlagency.app.n8n.cloud/webhook/99751654-d1ae-4535-81fb-2e858e1c5220", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        mode: "no-cors",
-        body: JSON.stringify(formData),
-      });
+      const [webhookResult, dbResult] = await Promise.allSettled([
+        fetch("https://cdlagency.app.n8n.cloud/webhook/99751654-d1ae-4535-81fb-2e858e1c5220", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          mode: "no-cors",
+          body: JSON.stringify(formData),
+        }),
+        fetch("/api/leads", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, source: "popup" }),
+        }),
+      ]);
+      const dbOk = dbResult.status === "fulfilled" && dbResult.value.ok;
+      if (!dbOk) console.error("Lead DB save failed:", dbResult);
+      if (webhookResult.status === "rejected") console.error("Webhook failed:", webhookResult.reason);
       onOpenChange(false);
       setFormData({ fullName: "", email: "", phone: "", service: "", address: "", details: "" });
     } catch (err) {
-      console.error("Webhook error:", err);
+      console.error("Submission error:", err);
     } finally {
       setSubmitting(false);
     }

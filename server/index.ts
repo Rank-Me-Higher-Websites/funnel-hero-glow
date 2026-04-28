@@ -10,6 +10,23 @@ app.use(express.json({ limit: "100kb" }));
 
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
+async function ensureSchema() {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS leads (
+      id SERIAL PRIMARY KEY,
+      full_name VARCHAR(255) NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      phone VARCHAR(50) NOT NULL,
+      service VARCHAR(100),
+      address VARCHAR(500),
+      details TEXT,
+      source VARCHAR(50),
+      created_at TIMESTAMP NOT NULL DEFAULT NOW()
+    );
+  `);
+  await pool.query(`CREATE INDEX IF NOT EXISTS leads_created_at_idx ON leads (created_at DESC);`);
+}
+
 app.post("/api/leads", async (req: Request, res: Response) => {
   try {
     const { fullName, email, phone, service, address, details, source } = req.body || {};
@@ -63,6 +80,7 @@ const PORT = Number(process.env.PORT) || 5000;
 const isDev = process.env.NODE_ENV !== "production";
 
 async function start() {
+  await ensureSchema();
   if (isDev) {
     const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({

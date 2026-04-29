@@ -28,9 +28,12 @@ async function ensureSchema() {
 }
 
 app.post("/api/leads", async (req: Request, res: Response) => {
+  const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+  console.log(`[lead] POST received from ip=${ip} ua="${req.headers["user-agent"]}" body=${JSON.stringify(req.body)}`);
   try {
     const { fullName, email, phone, service, address, details, source } = req.body || {};
     if (!fullName || !email || !phone) {
+      console.warn(`[lead] REJECTED missing fields: fullName=${!!fullName} email=${!!email} phone=${!!phone}`);
       return res.status(400).json({ error: "Missing required fields" });
     }
     const result = await pool.query(
@@ -47,9 +50,10 @@ app.post("/api/leads", async (req: Request, res: Response) => {
         source ? String(source).slice(0, 50) : null,
       ]
     );
+    console.log(`[lead] SAVED id=${result.rows[0].id} name="${fullName}" email="${email}" source="${source}"`);
     res.json({ ok: true, id: result.rows[0].id });
   } catch (err) {
-    console.error("[/api/leads POST] error:", err);
+    console.error("[lead] DB error:", err);
     res.status(500).json({ error: "Internal error" });
   }
 });
@@ -91,9 +95,20 @@ async function start() {
     app.use(vite.middlewares);
   } else {
     const distDir = path.resolve(__dirname, "..", "dist", "public");
-    app.use(express.static(distDir));
+    app.use(
+      express.static(distDir, {
+        setHeaders: (res, filePath) => {
+          if (filePath.includes(`${path.sep}assets${path.sep}`)) {
+            res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+          } else if (filePath.endsWith(".html")) {
+            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+          }
+        },
+      })
+    );
     app.use((req: Request, res: Response, next: NextFunction) => {
       if (req.path.startsWith("/api/")) return next();
+      res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
       res.sendFile(path.resolve(distDir, "index.html"));
     });
   }

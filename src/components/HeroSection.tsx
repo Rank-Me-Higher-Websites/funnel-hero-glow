@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Star, CheckCircle } from "lucide-react";
+import { Phone, Star, CheckCircle, CheckCircle2 } from "lucide-react";
 import bbbBadge from "@/assets/bbb-badge.png";
 import ernestLogo from "@/assets/ernest-logo.png";
 import heroBg from "@/assets/hero-bg.webp";
@@ -20,6 +20,7 @@ const HeroSection = () => {
     details: "",
   });
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -50,6 +51,7 @@ const HeroSection = () => {
       if (!dbOk) console.error("Lead DB save failed:", dbResult);
       if (webhookResult.status === "rejected") console.error("Webhook failed:", webhookResult.reason);
       setFormData({ fullName: "", email: "", phone: "", service: "", address: "", details: "" });
+      setSubmitted(true);
     } catch (err) {
       console.error("Submission error:", err);
     } finally {
@@ -139,6 +141,25 @@ const HeroSection = () => {
 
             <div className="order-2 max-w-md mx-auto w-full" id="quote-form">
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 md:p-5 shadow-2xl">
+                {submitted ? (
+                  <div className="text-center py-6 md:py-10" data-testid="hero-success">
+                    <CheckCircle2 className="w-12 h-12 md:w-16 md:h-16 text-trust-green mx-auto mb-3" />
+                    <h2 className="text-base md:text-xl font-black text-white mb-1" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
+                      Thank You!
+                    </h2>
+                    <p className="text-white/80 text-xs md:text-sm mb-4 px-2">
+                      Your request has been received. Our team will reach out to you shortly with your free quote.
+                    </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="text-accent font-bold text-xs md:text-sm underline hover:brightness-110"
+                      data-testid="button-submit-another"
+                    >
+                      Submit another request
+                    </button>
+                  </div>
+                ) : (
+                <>
                 <h2 className="text-sm md:text-lg font-black text-white text-center mb-0.5" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
                   Get Your Free Quote
                 </h2>
@@ -228,6 +249,8 @@ const HeroSection = () => {
                 <p className="text-white/50 text-[9px] text-center mt-1.5">
                   No spam. No obligation. 100% free estimate.
                 </p>
+                </>
+                )}
               </div>
 
               <div className="flex justify-center gap-1.5 md:gap-3 mt-2 md:mt-3">

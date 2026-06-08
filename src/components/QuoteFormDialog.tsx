@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Phone, X } from "lucide-react";
+import { Phone, X, CheckCircle2 } from "lucide-react";
 
 const trackLead = () => {
   const tryFire = (attempt = 0) => {
@@ -43,9 +43,13 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
   };
 
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    if (open) trackLead();
+    if (open) {
+      trackLead();
+      setSubmitted(false);
+    }
   }, [open]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -69,8 +73,8 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
       const dbOk = dbResult.status === "fulfilled" && dbResult.value.ok;
       if (!dbOk) console.error("Lead DB save failed:", dbResult);
       if (webhookResult.status === "rejected") console.error("Webhook failed:", webhookResult.reason);
-      onOpenChange(false);
       setFormData({ fullName: "", email: "", phone: "", service: "", address: "", details: "" });
+      setSubmitted(true);
     } catch (err) {
       console.error("Submission error:", err);
     } finally {
@@ -97,6 +101,23 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
               <X className="w-5 h-5 text-gray-500" />
             </button>
           </div>
+          {submitted ? (
+            <div className="text-center py-6" data-testid="popup-success">
+              <CheckCircle2 className="w-14 h-14 text-trust-green mx-auto mb-3" />
+              <h3 className="text-lg font-black text-gray-900 mb-1">Thank You!</h3>
+              <p className="text-gray-500 text-sm mb-5 px-2">
+                Your request has been received. Our team will reach out to you shortly with your free quote.
+              </p>
+              <button
+                onClick={() => onOpenChange(false)}
+                className="w-full bg-accent text-accent-foreground font-bold py-3 rounded-lg hover:brightness-110 transition-all text-sm"
+                data-testid="button-close-success"
+              >
+                Done
+              </button>
+            </div>
+          ) : (
+          <>
           <p className="text-gray-500 text-xs mb-4">Fill out the form and we'll get back to you ASAP.</p>
 
           <form onSubmit={handleSubmit} className="space-y-2.5">
@@ -124,6 +145,8 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
               {submitting ? "Sending..." : "Submit Request"}
             </button>
           </form>
+          </>
+          )}
         </div>
       </div>
     </div>

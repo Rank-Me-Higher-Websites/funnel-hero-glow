@@ -57,22 +57,12 @@ const QuoteFormDialog = ({ open, onOpenChange }: QuoteFormDialogProps) => {
     setSubmitting(true);
     trackLead();
     try {
-      const [webhookResult, dbResult] = await Promise.allSettled([
-        fetch("https://n8n.andriusdigital.com/webhook/99751654-d1ae-4535-81fb-2e858e1c5220", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          mode: "no-cors",
-          body: JSON.stringify(formData),
-        }),
-        fetch("/api/leads", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...formData, source: "popup" }),
-        }),
-      ]);
-      const dbOk = dbResult.status === "fulfilled" && dbResult.value.ok;
-      if (!dbOk) console.error("Lead DB save failed:", dbResult);
-      if (webhookResult.status === "rejected") console.error("Webhook failed:", webhookResult.reason);
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, source: "popup" }),
+      });
+      if (!res.ok) console.error("Lead submission failed:", res.status);
       setFormData({ fullName: "", email: "", phone: "", service: "", address: "", details: "" });
       setSubmitted(true);
     } catch (err) {

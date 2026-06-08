@@ -10,6 +10,27 @@ app.use(express.json({ limit: "100kb" }));
 
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
+const N8N_WEBHOOK_URL =
+  "https://n8n.andriusdigital.com/webhook/99751654-d1ae-4535-81fb-2e858e1c5220";
+
+async function forwardToN8n(payload: Record<string, unknown>) {
+  try {
+    const resp = await fetch(N8N_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const text = await resp.text().catch(() => "");
+    if (resp.ok) {
+      console.log(`[n8n] forwarded OK status=${resp.status} resp=${text.slice(0, 200)}`);
+    } else {
+      console.error(`[n8n] forward FAILED status=${resp.status} resp=${text.slice(0, 200)}`);
+    }
+  } catch (err) {
+    console.error("[n8n] forward error:", err);
+  }
+}
+
 async function ensureSchema() {
   await pool.query(`
     CREATE TABLE IF NOT EXISTS leads (
@@ -51,6 +72,7 @@ app.post("/api/leads", async (req: Request, res: Response) => {
       ]
     );
     console.log(`[lead] SAVED id=${result.rows[0].id} name="${fullName}" email="${email}" source="${source}"`);
+    forwardToN8n({ fullName, email, phone, service, address, details, source });
     res.json({ ok: true, id: result.rows[0].id });
   } catch (err) {
     console.error("[lead] DB error:", err);

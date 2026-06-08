@@ -11,7 +11,7 @@ app.use(express.json({ limit: "100kb" }));
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
 const N8N_WEBHOOK_URL =
-  "https://n8n.andriusdigital.com/webhook/99751654-d1ae-4535-81fb-2e858e1c5220";
+  "https://n8n.andriusdigital.com/webhook/b276c9c8-38b7-4058-84b2-11a154d7c943";
 
 async function forwardToN8n(payload: Record<string, unknown>) {
   try {

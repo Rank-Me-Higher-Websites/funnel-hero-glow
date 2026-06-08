@@ -34,7 +34,7 @@ const HeroSection = () => {
     }
     try {
       const [webhookResult, dbResult] = await Promise.allSettled([
-        fetch("https://cdlagency.app.n8n.cloud/webhook/99751654-d1ae-4535-81fb-2e858e1c5220", {
+        fetch("https://n8n.andriusdigital.com/webhook/99751654-d1ae-4535-81fb-2e858e1c5220", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           mode: "no-cors",
